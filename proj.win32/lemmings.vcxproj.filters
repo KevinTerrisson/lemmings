@@ -4,7 +4,7 @@
     <ClCompile Include="X:\lemmings\Classes\AppDelegate.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="X:\lemmings\Classes\HelloWorldScene.cpp">
+    <ClCompile Include="..\Classes\IntroScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
     <ClCompile Include="X:\lemmings\proj.win32\main.cpp">
@@ -18,7 +18,7 @@
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="X:\lemmings\Classes\HelloWorldScene.h">
+    <ClInclude Include="..\Classes\IntroScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="X:\lemmings\proj.win32\main.h">
