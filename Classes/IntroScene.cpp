@@ -39,6 +39,8 @@ bool IntroScene::init()
 
         // add the label as a child to this layer
         this->addChild(label, 1);
+
+        label->enableShadow(Color4B::WHITE);
     }
 
     return true;
