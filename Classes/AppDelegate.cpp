@@ -59,11 +59,25 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
 
-    // create a scene. it's an autorelease object
-    auto scene = IntroScene::createScene();
+    // create the Intro scene
+    auto introScene = IntroScene::createScene();
 
-    // run
-    director->runWithScene(scene);
+    // create the Menu scene
+    /*auto menu = Menu::createScene();*/
+
+    // create the Level scene
+    /*auto level = Level::createScene();*/
+
+    // create the Win scene
+    /*auto win = Win::createScene();*/
+
+    // create the Loose scene
+    /*auto loose = Loose::createScene();*/
+
+    // run scenes
+    director->runWithScene(introScene);
+
+    /*director->replaceScene(menu);*/
 
     return true;
 }
