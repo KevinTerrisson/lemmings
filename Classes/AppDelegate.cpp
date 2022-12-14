@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "IntroScene.h"
+#include "MenuScene.h"
 
 // #define USE_AUDIO_ENGINE 1
 
@@ -63,7 +64,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto introScene = IntroScene::createScene();
 
     // create the Menu scene
-    /*auto menu = Menu::createScene();*/
+    auto menuScene = MenuScene::createScene();
 
     // create the Level scene
     /*auto level = Level::createScene();*/
@@ -75,9 +76,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     /*auto loose = Loose::createScene();*/
 
     // run scenes
-    director->runWithScene(introScene);
+    //director->runWithScene(introScene);
 
-    /*director->replaceScene(menu);*/
+    //director->replaceScene(menuScene);
+    director->runWithScene(menuScene);
 
     return true;
 }

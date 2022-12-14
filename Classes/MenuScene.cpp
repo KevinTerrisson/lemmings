@@ -20,8 +20,8 @@ bool MenuScene::init() {
 
     auto menu = Menu::create(startMenu, exitMenu, nullptr);
     menu->setPosition(Point::ZERO);
-    startMenu->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
-    exitMenu->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 - exitMenu->getContentSize().height - 20);
+    startMenu->setPosition(visibleSize.width / 3 + origin.x, visibleSize.height / 3 + origin.y);
+    exitMenu->setPosition((visibleSize.width / 3 + origin.x) * 2, visibleSize.height / 3 + origin.y); //-exitMenu->getContentSize().height - 20);
     this->addChild(menu);
 
     return true;
