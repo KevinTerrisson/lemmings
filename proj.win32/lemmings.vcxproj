@@ -819,9 +819,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\Classes\IntroScene.cpp" />
     <ClCompile Include="X:\lemmings\proj.win32\main.cpp" />
     <ResourceCompile Include="X:\lemmings\proj.win32\game.rc" />
-    <ClInclude Include="X:\lemmings\Resources\CloseNormal.png" />
-    <ClInclude Include="X:\lemmings\Resources\CloseSelected.png" />
-    <ClInclude Include="X:\lemmings\Resources\HelloWorld.png" />
     <ClInclude Include="X:\lemmings\Resources\fonts\Marker Felt.ttf" />
     <ClInclude Include="X:\lemmings\Resources\fonts\arial.ttf" />
     <ClInclude Include="X:\lemmings\Resources\res\.gitkeep" />
