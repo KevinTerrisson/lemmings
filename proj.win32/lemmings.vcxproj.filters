@@ -79,22 +79,5 @@
     <Filter Include="Source Files\proj.win32">
       <UniqueIdentifier>{B7FEA8D1-3910-39D8-98D7-0B365F79EA29}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\Menu">
-      <UniqueIdentifier>{c44b85ce-20d2-4e23-8d79-f207c94d9564}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\Resources\Menu\jouer.png">
-      <Filter>Resources\Menu</Filter>
-    </Image>
-    <Image Include="..\Resources\Menu\jouer-selectionne.png">
-      <Filter>Resources\Menu</Filter>
-    </Image>
-    <Image Include="..\Resources\Menu\quitter.png">
-      <Filter>Resources\Menu</Filter>
-    </Image>
-    <Image Include="..\Resources\Menu\quitter-selectionne.png">
-      <Filter>Resources\Menu</Filter>
-    </Image>
   </ItemGroup>
 </Project>
