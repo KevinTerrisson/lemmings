@@ -13,6 +13,9 @@
     <ClCompile Include="X:\lemmings\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MenuScene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h">
@@ -45,6 +48,9 @@
     <ClInclude Include="X:\lemmings\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
     </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="X:\lemmings\CMakeLists.txt" />
@@ -73,5 +79,22 @@
     <Filter Include="Source Files\proj.win32">
       <UniqueIdentifier>{B7FEA8D1-3910-39D8-98D7-0B365F79EA29}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\Menu">
+      <UniqueIdentifier>{c44b85ce-20d2-4e23-8d79-f207c94d9564}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\Menu\jouer.png">
+      <Filter>Resources\Menu</Filter>
+    </Image>
+    <Image Include="..\Resources\Menu\jouer-selectionne.png">
+      <Filter>Resources\Menu</Filter>
+    </Image>
+    <Image Include="..\Resources\Menu\quitter.png">
+      <Filter>Resources\Menu</Filter>
+    </Image>
+    <Image Include="..\Resources\Menu\quitter-selectionne.png">
+      <Filter>Resources\Menu</Filter>
+    </Image>
   </ItemGroup>
 </Project>

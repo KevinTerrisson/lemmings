@@ -809,10 +809,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MenuScene.h" />
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\IntroScene.h" />
     <ClInclude Include="X:\lemmings\proj.win32\main.h" />
     <ClInclude Include="X:\lemmings\proj.win32\resource.h" />
+    <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="X:\lemmings\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\IntroScene.cpp" />
     <ClCompile Include="X:\lemmings\proj.win32\main.cpp" />
@@ -886,6 +888,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{007164B6-D14C-3C3A-B517-004DC475A55F}</Project>
       <Name>external</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\Menu\jouer-selectionne.png" />
+    <Image Include="..\Resources\Menu\jouer.png" />
+    <Image Include="..\Resources\Menu\quitter-selectionne.png" />
+    <Image Include="..\Resources\Menu\quitter.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
