@@ -47,9 +47,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     #if(CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
         glview = cocos2d::GLViewImpl::create("Lemmings");
     #else
-        //glview = cocos2d::GLViewImpl::createWithFullScreen("Lemmings");
-        glview = cocos2d::GLViewImpl::create("Lemmings");
-#endif
+        glview = cocos2d::GLViewImpl::createWithFullScreen("Lemmings");
+    #endif
         director->setOpenGLView(glview);
     }
 
