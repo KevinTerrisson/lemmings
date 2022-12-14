@@ -28,6 +28,11 @@ bool IntroScene::init()
     // create and initialize a label
 
     auto label = Label::createWithTTF("Lemmings", "font/pixelArt.ttf", 100);
+    auto fadeIn = FadeIn::create(1.0f);
+    auto fadeOut = FadeOut::create(1.0f);
+    auto delay = DelayTime::create(1);
+    auto seq = Sequence::create(delay, fadeIn, delay, fadeOut, nullptr);
+
     if (label == nullptr)
     {
         problemLoading("'font/pixelArt.ttf'");
@@ -36,11 +41,12 @@ bool IntroScene::init()
     {
         // position the label on the center of the screen
         label->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+        label->setOpacity(0);
 
         // add the label as a child to this layer
         this->addChild(label, 1);
 
-        label->enableShadow(Color4B::WHITE);
+        label->runAction(seq);
     }
 
     return true;
