@@ -62,15 +62,19 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create the Intro scene
-    auto introScene = IntroScene::createScene();
+    //auto introScene = IntroScene::createScene();
 
     // create the Menu scene
     //auto menuScene = MenuScene::createScene();
 
     // run scenes
-    director->runWithScene(introScene);
+    //director->runWithScene(introScene);
 
     //director->replaceScene(menuScene);
+
+
+
+
 
     return true;
 }

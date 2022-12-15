@@ -16,7 +16,7 @@
     <ClCompile Include="..\Classes\MenuScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Scenes.cpp">
+    <ClCompile Include="SceneManager.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -49,7 +49,7 @@
     <ClInclude Include="..\Classes\MenuScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Scenes.h">
+    <ClInclude Include="..\Classes\SceneManager.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
