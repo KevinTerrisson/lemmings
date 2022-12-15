@@ -59,7 +59,6 @@ public:
     */
     virtual void applicationWillEnterForeground();
 
-    virtual void play_music();
 };
 
 #endif // _APP_DELEGATE_H_
