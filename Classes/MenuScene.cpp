@@ -1,11 +1,11 @@
-#include "IntroScene.h"
+#include "MenuScene.h"
 #include "AudioEngine.h"
 
 USING_NS_CC;
 
-Scene* IntroScene::createScene()
+Scene* MenuScene::createScene()
 {
-    return IntroScene::create();
+    return MenuScene::create();
 }
 
 // Print useful error message instead of segfaulting when files are not there.
@@ -15,9 +15,9 @@ static void problemLoading(const char* filename)
 }
 
 // on "init" you need to initialize your instance
-bool IntroScene::init()
+bool MenuScene::init()
 {
-    if ( !Scene::init() )
+    if (!Scene::init())
     {
         return false;
     }
@@ -28,29 +28,19 @@ bool IntroScene::init()
     // add a label shows "Lemmings"
     // create and initialize a label
 
-    auto label = Label::createWithTTF("Lemmings", "font/pixelArt.ttf", 120);
-    auto fadeIn = FadeIn::create(2.0f);
-    auto delay = DelayTime::create(1);
-    auto fadeOut = FadeOut::create(0.5f);
-    auto seq = Sequence::create(fadeIn, delay, fadeOut, nullptr);
+    auto label = Label::createWithTTF("MENU", "font/pixelArt.ttf", 120);
 
     if (label == nullptr)
     {
         problemLoading("'font/pixelArt.ttf'");
-        problemLoading("'sfx/Introduction.mp3'");
     }
     else
     {
         // position the label on the center of the screen
         label->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
-        label->setOpacity(0);
 
         // add the label as a child to this layer
         this->addChild(label, 1);
-
-        auto music = AudioEngine::play2d("sfx/Introduction.mp3", false);
-
-        label->runAction(seq);
     }
 
     return true;

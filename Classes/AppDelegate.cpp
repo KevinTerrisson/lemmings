@@ -1,7 +1,6 @@
 #include "AppDelegate.h"
 #include "IntroScene.h"
-
-// #define USE_AUDIO_ENGINE 1
+//#include "MenuScene.h"
 
 #if USE_AUDIO_ENGINE
 #include "audio/include/AudioEngine.h"
@@ -39,14 +38,16 @@ static int register_all_packages()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
+
     if(!glview) {
     #if(CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
         glview = cocos2d::GLViewImpl::create("Lemmings");
     #else
-        //glview = cocos2d::GLViewImpl::createWithFullScreen("Lemmings");
+       /* glview = cocos2d::GLViewImpl::createWithFullScreen("Lemmings");*/
         glview = cocos2d::GLViewImpl::create("Lemmings");
 #endif
         director->setOpenGLView(glview);
@@ -64,21 +65,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto introScene = IntroScene::createScene();
 
     // create the Menu scene
-    /*auto menu = Menu::createScene();*/
-
-    // create the Level scene
-    /*auto level = Level::createScene();*/
-
-    // create the Win scene
-    /*auto win = Win::createScene();*/
-
-    // create the Loose scene
-    /*auto loose = Loose::createScene();*/
+    //auto menuScene = MenuScene::createScene();
 
     // run scenes
     director->runWithScene(introScene);
 
-    /*director->replaceScene(menu);*/
+    //director->replaceScene(menuScene);
 
     return true;
 }
