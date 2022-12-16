@@ -5,6 +5,11 @@
 
 USING_NS_CC;
 
+Scene* LevelScene::createScene()
+{
+    return LevelScene::create();
+}
+
 // on "init" you need to initialize your instance
 bool LevelScene::init()
 {
@@ -16,7 +21,6 @@ bool LevelScene::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    // add a label shows "Lemmings"
     // create and initialize a label
 
     auto label = Label::createWithTTF("Game Window", "font/pixelArt.ttf", 120);
@@ -30,17 +34,10 @@ bool LevelScene::init()
     {
         // position the label on the center of the screen
         label->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
-        label->setOpacity(0);
 
         // add the label as a child to this layer
         this->addChild(label, 1);
-
-        auto music = AudioEngine::play2d("sfx/Introduction.mp3", false);
-
-        label->runAction(seq);
     }
 
-    scheduleUpdate();
-    //retain();
     return true;
 }

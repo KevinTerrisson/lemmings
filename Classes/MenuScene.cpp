@@ -1,5 +1,6 @@
 #include "MenuScene.h"
 #include "AudioEngine.h"
+#include "LevelScene.h"
 
 USING_NS_CC;
 
@@ -36,13 +37,19 @@ bool MenuScene::init()
     return true;
 }
 
-void MenuScene::changeScene(Ref* pSender) {
+void MenuScene::changeScene(Ref* pSender)
+{
+    //clic sfx button
     auto music = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
-    //auto scene = IntroScene::createScene();
-    //Director::getInstance()->pushScene(TransitionFade::create(1.0f, scene));
+
+    // changing scene
+    auto m_levelScene = LevelScene::createScene();
+    //Director::getInstance()->replaceScene((Scene*)m_levelScene);
+    Director::getInstance()->replaceScene(m_levelScene);
 }
 
-void MenuScene::exitGame(Ref* pSender) {
+void MenuScene::exitGame(Ref* pSender)
+{
     auto music = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
     Director::getInstance()->end();
 }

@@ -4,7 +4,7 @@
 
 class IntroScene;
 class MenuScene;
-class LevelScene;
+//class LevelScene;
 
 class SceneManager : public cocos2d::Node
 {
@@ -13,13 +13,13 @@ public:
 
     bool RunIntroScene();
     bool RunMenuScene();
-    bool RunLevelScene();
+    //bool RunLevelScene();
 
     void OnIntroScene(float dt);
 
     IntroScene* m_introScene;
     MenuScene* m_menuScene;
-    LevelScene* m_levelScene;
+    /*LevelScene* m_levelScene;*/
 
 private:
 };

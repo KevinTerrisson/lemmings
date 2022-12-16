@@ -6,7 +6,6 @@
 class MenuScene : public cocos2d::Scene
 {
 public:
-    
 	virtual bool init();
 	cocos2d::MenuItemImage* startMenu;
 	cocos2d::MenuItemImage* exitMenu;

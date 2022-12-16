@@ -7,8 +7,9 @@
 
 class LevelScene : public cocos2d::Scene
 {
+public:
     virtual bool init();
-
+    static cocos2d::Scene* createScene();
     CREATE_FUNC(LevelScene);
 
 };
