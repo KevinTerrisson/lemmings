@@ -48,6 +48,9 @@
     <ClInclude Include="..\Classes\SceneManager.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
+    <ClInclude Include="X:\lemmings\Resources\res\background.png">
+      <Filter>Resources\res</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="X:\lemmings\CMakeLists.txt" />
