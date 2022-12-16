@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "SceneManager.h"
 #include "IntroScene.h"
+#include "AudioEngine.h"
 
 USING_NS_CC;
 
@@ -22,7 +23,7 @@ bool IntroScene::init()
     // add a label shows "Lemmings"
     // create and initialize a label
     
-    auto label = Label::createWithTTF("Lemmings", "font/pixelArt.ttf", 120);
+    auto label = Label::createWithTTF("Bitch Studio", "font/pixelArt.ttf", 120);
     auto fadeIn = FadeIn::create(2.0f);
     auto delay = DelayTime::create(1);
     auto fadeOut = FadeOut::create(0.5f);
@@ -41,6 +42,8 @@ bool IntroScene::init()
 
         // add the label as a child to this layer
         this->addChild(label, 1);
+
+        auto music = AudioEngine::play2d("sfx/Introduction.mp3", false);
 
         label->runAction(seq);
     }
