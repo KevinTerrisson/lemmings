@@ -33,8 +33,8 @@ bool MenuScene::init() {
 }
 
 void MenuScene::changeScene(Ref* pSender) {
-    auto scene = IntroScene::createScene();
-    Director::getInstance()->pushScene(TransitionFade::create(1.0f, scene));
+    //auto scene = IntroScene::createScene();
+    //Director::getInstance()->pushScene(TransitionFade::create(1.0f, scene));
 }
 
 void MenuScene::exitGame(Ref* pSender) {
