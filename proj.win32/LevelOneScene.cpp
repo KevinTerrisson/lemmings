@@ -18,14 +18,8 @@ bool LevelOneScene::init()
     if (!Scene::init())
     {
 
-        auto map = TMXTiledMap::create("lemmings / Resources / tiled / map.tmx");
-        addChild(map, 0, 99); // with a tag of '99'
-
-       /* _tileMap = new CCTMXTiledMap();
-        _tileMap->initWithTMXFile("map.tmx");
-        _background = _tileMap->layerNamed("Background");
-
-        this->addChild(_tileMap);*/
+        auto map = TMXTiledMap::create("lemmings / Resources / tiled / map.tmx.tmx"); // appelle map 
+        addChild(map, 0, 99);
 
     }
 

@@ -4,6 +4,7 @@
         "width": 2
     },
     "activeFile": "X:/lemmings/Resources/tiled/map.tmx",
+    "automapping.whileDrawing": false,
     "expandedProjectPaths": [
         "."
     ],
@@ -17,7 +18,7 @@
             "selectedLayer": 1,
             "viewCenter": {
                 "x": 343,
-                "y": 424
+                "y": 292
             }
         }
     },
