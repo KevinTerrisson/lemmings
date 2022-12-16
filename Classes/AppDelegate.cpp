@@ -47,8 +47,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
         glview = cocos2d::GLViewImpl::create("Lemmings");
     #else
 
-       /* glview = cocos2d::GLViewImpl::createWithFullScreen("Lemmings");*/
-        glview = cocos2d::GLViewImpl::create("Lemmings");
+        glview = cocos2d::GLViewImpl::createWithFullScreen("Lemmings");
+        /*glview = cocos2d::GLViewImpl::create("Lemmings");*/
 
 #endif
         director->setOpenGLView(glview);

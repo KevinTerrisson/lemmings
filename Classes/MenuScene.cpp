@@ -38,11 +38,13 @@ bool MenuScene::init()
 }
 
 void MenuScene::changeScene(Ref* pSender) {
+    auto music = AudioEngine::play2d("sfx/Click-Menu.mp3", false);
     //auto scene = IntroScene::createScene();
     //Director::getInstance()->pushScene(TransitionFade::create(1.0f, scene));
 }
 
 void MenuScene::exitGame(Ref* pSender) {
+    auto music = AudioEngine::play2d("sfx/Click-Menu.mp3", false);
     Director::getInstance()->end();
 }
 
