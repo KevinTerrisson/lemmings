@@ -31,7 +31,7 @@ bool MenuScene::init()
     this->addChild(menu);
 
     // Musique //
-    auto music = AudioEngine::play2d("music/Menu.mp3", false);
+    auto music = AudioEngine::play2d("music/Menu.mp3", true);
 
 
     return true;
