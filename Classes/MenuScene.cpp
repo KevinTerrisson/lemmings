@@ -30,6 +30,10 @@ bool MenuScene::init()
     exitMenu->setPosition((visibleSize.width / 6 + origin.x) * 5, visibleSize.height / 5 + origin.y); //-exitMenu->getContentSize().height - 20);
     this->addChild(menu);
 
+    // Musique //
+    auto music = AudioEngine::play2d("music/Menu.mp3", false);
+
+
     return true;
 }
 
