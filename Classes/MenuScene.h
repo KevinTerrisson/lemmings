@@ -6,7 +6,13 @@
 class MenuScene : public cocos2d::Scene
 {
 public:
-    virtual bool init();
+    
+	virtual bool init();
+	cocos2d::MenuItemImage* startMenu;
+	cocos2d::MenuItemImage* exitMenu;
+	void changeScene(Ref* pSender);
+	void exitGame(Ref* pSender);
+
     virtual void update(float dt);
 
     // implement the "static create()" method manually
