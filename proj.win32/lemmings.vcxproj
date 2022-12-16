@@ -826,7 +826,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="X:\lemmings\Resources\res\jouer-select.PNG" />
     <ClInclude Include="X:\lemmings\Resources\res\quitter.PNG" />
     <ClInclude Include="X:\lemmings\Resources\res\quitter-select.PNG" />
-    <ClInclude Include="X:\lemmings\Resources\res\Bannière.png" />
+    <ClInclude Include="X:\lemmings\Resources\res\background.png" />
     <ClCompile Include="X:\lemmings\cocos2d\cocos\precheader.cpp" />
   </ItemGroup>
   <ItemGroup>
