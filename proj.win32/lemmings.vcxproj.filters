@@ -4,7 +4,7 @@
     <ClCompile Include="X:\lemmings\Classes\AppDelegate.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="X:\lemmings\Classes\HelloWorldScene.cpp">
+    <ClCompile Include="..\Classes\IntroScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
     <ClCompile Include="X:\lemmings\proj.win32\main.cpp">
@@ -13,12 +13,18 @@
     <ClCompile Include="X:\lemmings\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="X:\lemmings\Classes\MenuScene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Level_one_scene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="X:\lemmings\Classes\HelloWorldScene.h">
+    <ClInclude Include="..\Classes\IntroScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="X:\lemmings\proj.win32\main.h">
@@ -26,15 +32,6 @@
     </ClInclude>
     <ClInclude Include="X:\lemmings\proj.win32\resource.h">
       <Filter>Source Files\proj.win32</Filter>
-    </ClInclude>
-    <ClInclude Include="X:\lemmings\Resources\CloseNormal.png">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="X:\lemmings\Resources\CloseSelected.png">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="X:\lemmings\Resources\HelloWorld.png">
-      <Filter>Resources</Filter>
     </ClInclude>
     <ClInclude Include="X:\lemmings\Resources\fonts\Marker Felt.ttf">
       <Filter>Resources\fonts</Filter>
@@ -44,6 +41,25 @@
     </ClInclude>
     <ClInclude Include="X:\lemmings\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
+    </ClInclude>
+    <ClInclude Include="X:\lemmings\Resources\res\jouer.PNG">
+      <Filter>Resources\res</Filter>
+    </ClInclude>
+    <ClInclude Include="X:\lemmings\Resources\res\jouer-select.PNG">
+      <Filter>Resources\res</Filter>
+    </ClInclude>
+    <ClInclude Include="X:\lemmings\Resources\res\quitter.PNG">
+      <Filter>Resources\res</Filter>
+    </ClInclude>
+    <ClInclude Include="X:\lemmings\Resources\res\quitter-select.PNG">
+      <Filter>Resources\res</Filter>
+    </ClInclude>
+    <ClInclude Include="X:\lemmings\Classes\MenuScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="X:\lemmings\Resources\res\Bannière.png" />
+    <ClInclude Include="Level_one_scene.h">
+      <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

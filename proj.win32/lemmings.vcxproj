@@ -117,7 +117,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different X:/lemmings/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll X:/lemmings/proj.win32/bin/lemmings/Debug/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
@@ -283,7 +284,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different X:/lemmings/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll X:/lemmings/proj.win32/bin/lemmings/Release/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
@@ -449,7 +451,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different X:/lemmings/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll X:/lemmings/proj.win32/bin/lemmings/MinSizeRel/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
@@ -614,7 +617,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different X:/lemmings/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll X:/lemmings/proj.win32/bin/lemmings/RelWithDebInfo/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
@@ -805,20 +809,26 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Level_one_scene.h" />
+    <ClInclude Include="X:\lemmings\Classes\MenuScene.h" />
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h" />
-    <ClInclude Include="X:\lemmings\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\IntroScene.h" />
     <ClInclude Include="X:\lemmings\proj.win32\main.h" />
     <ClInclude Include="X:\lemmings\proj.win32\resource.h" />
+    <ClCompile Include="Level_one_scene.cpp" />
+    <ClCompile Include="X:\lemmings\Classes\MenuScene.cpp" />
     <ClCompile Include="X:\lemmings\Classes\AppDelegate.cpp" />
-    <ClCompile Include="X:\lemmings\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\IntroScene.cpp" />
     <ClCompile Include="X:\lemmings\proj.win32\main.cpp" />
     <ResourceCompile Include="X:\lemmings\proj.win32\game.rc" />
-    <ClInclude Include="X:\lemmings\Resources\CloseNormal.png" />
-    <ClInclude Include="X:\lemmings\Resources\CloseSelected.png" />
-    <ClInclude Include="X:\lemmings\Resources\HelloWorld.png" />
     <ClInclude Include="X:\lemmings\Resources\fonts\Marker Felt.ttf" />
     <ClInclude Include="X:\lemmings\Resources\fonts\arial.ttf" />
     <ClInclude Include="X:\lemmings\Resources\res\.gitkeep" />
+    <ClInclude Include="X:\lemmings\Resources\res\jouer.PNG" />
+    <ClInclude Include="X:\lemmings\Resources\res\jouer-select.PNG" />
+    <ClInclude Include="X:\lemmings\Resources\res\quitter.PNG" />
+    <ClInclude Include="X:\lemmings\Resources\res\quitter-select.PNG" />
+    <ClInclude Include="X:\lemmings\Resources\res\Bannière.png" />
     <ClCompile Include="X:\lemmings\cocos2d\cocos\precheader.cpp" />
   </ItemGroup>
   <ItemGroup>

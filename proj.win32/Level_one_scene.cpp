@@ -1,5 +1,6 @@
 #include "Level_one_scene.h"
 
+
 USING_NS_CC;
 
 Scene* Level_one_scene::createScene()
@@ -16,11 +17,15 @@ bool Level_one_scene::init()
 {
     if (!Scene::init())
     {
-        _tileMap = new CCTMXTiledMap();
-        _tileMap->initWithTMXFile("TileMap.tmx");
+
+        auto map = TMXTiledMap::create("map.tmx");
+        addChild(map, 0, 99); // with a tag of '99'
+
+       /* _tileMap = new CCTMXTiledMap();
+        _tileMap->initWithTMXFile("map.tmx");
         _background = _tileMap->layerNamed("Background");
 
-        this->addChild(_tileMap);
+        this->addChild(_tileMap);*/
 
     }
 
