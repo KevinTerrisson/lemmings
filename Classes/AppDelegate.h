@@ -35,7 +35,7 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
-
+    
     SceneManager* m_pManager;
 };
 

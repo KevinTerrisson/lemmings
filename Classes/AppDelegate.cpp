@@ -59,7 +59,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0f / 60);
 
     register_all_packages();
-
+    
     m_pManager = SceneManager::create();
     m_pManager->RunIntroScene();
 
