@@ -38,5 +38,5 @@ void MenuScene::changeScene(Ref* pSender) {
 }
 
 void MenuScene::exitGame(Ref* pSender) {
-
+    Director::getInstance()->end();
 }
