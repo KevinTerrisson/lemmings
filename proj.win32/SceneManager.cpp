@@ -1,6 +1,7 @@
 #include "SceneManager.h"
 #include "MenuScene.h"
 #include "IntroScene.h"
+#include "LevelScene.h"
 
 USING_NS_CC;
 
@@ -20,7 +21,15 @@ bool SceneManager::RunMenuScene()
     return true;
 }
 
-void SceneManager::OnIntroScene(float dt)
+bool SceneManager::RunLevelScene()
+{
+    m_levelScene = LevelScene::create();
+    Director::getInstance()->replaceScene((Scene*)m_levelScene);
+
+    return true;
+}
+
+void SceneManager::OnIntroScene(float dt) // test de supr float dt sur version stable
 {
     RunMenuScene();
 }
