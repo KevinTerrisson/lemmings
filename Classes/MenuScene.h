@@ -1,20 +1,18 @@
-#pragma once
-
-#ifndef MenuScene_h
-#define MenuScene_h
+#ifndef __MENU_SCENE_H__
+#define __MENU_SCENE_H__
 
 #include "cocos2d.h"
 
-class MenuScene : cocos2d::Scene {
+class MenuScene : public cocos2d::Scene
+{
 public:
-	static cocos2d::Scene* createScene();
-	virtual bool init();
-	cocos2d::MenuItemImage* startMenu;
-	cocos2d::MenuItemImage* exitMenu;
-	void changeScene(Ref* pSender);
-	void exitGame(Ref* pSender);
+    virtual bool init();
+    virtual void update(float dt);
 
-	CREATE_FUNC(MenuScene);
+    // implement the "static create()" method manually
+    CREATE_FUNC(MenuScene);
+
+    float m_time;
 };
 
-#endif // MenuScene.h
+#endif // __MENU_SCENE_H__

@@ -809,12 +809,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="X:\lemmings\Classes\MenuScene.h" />
+    <ClInclude Include="..\Classes\MenuScene.h" />
+    <ClInclude Include="..\Classes\SceneManager.h" />
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\IntroScene.h" />
     <ClInclude Include="X:\lemmings\proj.win32\main.h" />
     <ClInclude Include="X:\lemmings\proj.win32\resource.h" />
-    <ClCompile Include="X:\lemmings\Classes\MenuScene.cpp" />
+    <ClCompile Include="..\Classes\MenuScene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="X:\lemmings\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\IntroScene.cpp" />
     <ClCompile Include="X:\lemmings\proj.win32\main.cpp" />
@@ -822,11 +824,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="X:\lemmings\Resources\fonts\Marker Felt.ttf" />
     <ClInclude Include="X:\lemmings\Resources\fonts\arial.ttf" />
     <ClInclude Include="X:\lemmings\Resources\res\.gitkeep" />
-    <ClInclude Include="X:\lemmings\Resources\res\jouer.PNG" />
-    <ClInclude Include="X:\lemmings\Resources\res\jouer-select.PNG" />
-    <ClInclude Include="X:\lemmings\Resources\res\quitter.PNG" />
-    <ClInclude Include="X:\lemmings\Resources\res\quitter-select.PNG" />
-    <ClInclude Include="X:\lemmings\Resources\res\Bannière.png" />
     <ClCompile Include="X:\lemmings\cocos2d\cocos\precheader.cpp" />
   </ItemGroup>
   <ItemGroup>
