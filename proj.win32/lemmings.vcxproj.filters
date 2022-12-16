@@ -42,10 +42,6 @@
     <ClInclude Include="X:\lemmings\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
     </ClInclude>
-    <ClInclude Include="X:\lemmings\Resources\res\jouer.PNG" />
-    <ClInclude Include="X:\lemmings\Resources\res\jouer-select.PNG" />
-    <ClInclude Include="X:\lemmings\Resources\res\quitter.PNG" />
-    <ClInclude Include="X:\lemmings\Resources\res\quitter-select.PNG" />
     <ClInclude Include="..\Classes\MenuScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>

@@ -3,20 +3,11 @@
 
 USING_NS_CC;
 
-Scene* MenuScene::createScene()
-{
-    return MenuScene::create();
-}
-
-// Print useful error message instead of segfaulting when files are not there.
-static void problemLoading(const char* filename)
-{
-    printf("Error while loading: %s\n", filename);
-}
-
 // on "init" you need to initialize your instance
 bool MenuScene::init()
 {
+    m_time = 0.0f;
+
     if (!Scene::init())
     {
         return false;
@@ -32,7 +23,7 @@ bool MenuScene::init()
 
     if (label == nullptr)
     {
-        problemLoading("'font/pixelArt.ttf'");
+        //problemLoading("'font/pixelArt.ttf'");
     }
     else
     {
@@ -43,5 +34,11 @@ bool MenuScene::init()
         this->addChild(label, 1);
     }
 
+    //retain();
     return true;
+}
+
+void MenuScene::update(float dt)
+{
+    m_time += dt;
 }

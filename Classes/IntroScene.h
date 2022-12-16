@@ -6,12 +6,13 @@
 class IntroScene : public cocos2d::Scene
 {
 public:
-    static cocos2d::Scene* createScene();
-
     virtual bool init();
-    
+    virtual void update(float dt);
+
     // implement the "static create()" method manually
     CREATE_FUNC(IntroScene);
+
+    float m_time;
 };
 
 #endif // __INTRO_SCENE_H__

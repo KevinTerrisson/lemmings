@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 
+class SceneManager;
 /**
 @brief    The cocos2d Application.
 
@@ -34,6 +35,8 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
+
+    SceneManager* m_pManager;
 };
 
 #endif // _APP_DELEGATE_H_

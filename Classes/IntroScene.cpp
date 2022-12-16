@@ -1,22 +1,17 @@
+#include "AppDelegate.h"
+#include "SceneManager.h"
 #include "IntroScene.h"
 #include "AudioEngine.h"
 
 USING_NS_CC;
 
-Scene* IntroScene::createScene()
-{
-    return IntroScene::create();
-}
-
-// Print useful error message instead of segfaulting when files are not there.
-static void problemLoading(const char* filename)
-{
-    printf("Error while loading: %s\n", filename);
-}
+extern AppDelegate* g_pApp;
 
 // on "init" you need to initialize your instance
 bool IntroScene::init()
 {
+    m_time = 0.0f;
+
     if ( !Scene::init() )
     {
         return false;
@@ -36,8 +31,8 @@ bool IntroScene::init()
 
     if (label == nullptr)
     {
-        problemLoading("'font/pixelArt.ttf'");
-        problemLoading("'sfx/Introduction.mp3'");
+        //problemLoading("'font/pixelArt.ttf'");
+        //problemLoading("'sfx/Introduction.mp3'");
     }
     else
     {
@@ -53,5 +48,17 @@ bool IntroScene::init()
         label->runAction(seq);
     }
 
+    scheduleUpdate();
+    //retain();
     return true;
+}
+
+void IntroScene::update(float dt)
+{
+    m_time += dt;
+
+    if (m_time > 5.0f)
+    {
+        g_pApp->m_pManager->RunMenuScene();
+    }
 }

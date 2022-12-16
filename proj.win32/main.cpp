@@ -4,6 +4,8 @@
 
 USING_NS_CC;
 
+AppDelegate* g_pApp;
+
 int WINAPI _tWinMain(HINSTANCE hInstance,
                        HINSTANCE hPrevInstance,
                        LPTSTR    lpCmdLine,
@@ -14,5 +16,6 @@ int WINAPI _tWinMain(HINSTANCE hInstance,
 
     // create the application instance
     AppDelegate app;
+    g_pApp = &app;
     return Application::getInstance()->run();
 }

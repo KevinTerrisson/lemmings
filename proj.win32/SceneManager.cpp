@@ -4,23 +4,23 @@
 
 USING_NS_CC;
 
-Scene* SceneManager::createScene()
+bool SceneManager::RunIntroScene()
 {
-    auto sceneManager = SceneManager::create();
-
-    return sceneManager;
-}
-
-bool SceneManager::init()
-{
-    m_pMenu = Scene::create();
-
-    this->scheduleOnce(CC_SCHEDULE_SELECTOR(Scenes::MenuScene), 3.0); // after 3 seconds, go to MenuScene
+    m_introScene = IntroScene::create();
+    Director::getInstance()->runWithScene(m_introScene);
 
     return true;
 }
 
-void SceneManager::MenuScene(float dt) {
-    auto menuScene = MenuScene::createScene();
-    Director::getInstance()->replaceScene(TransitionSlideInR::create(0.25f, menuScene)); // transition time of the scene
+bool SceneManager::RunMenuScene()
+{
+    m_menuScene = MenuScene::create();
+    Director::getInstance()->replaceScene((Scene*)m_menuScene);
+
+    return true;
+}
+
+void SceneManager::OnIntroScene(float dt)
+{
+    RunMenuScene();
 }
