@@ -16,7 +16,7 @@ bool MenuScene::init() {
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
     auto background = Sprite::create("res/Bannière.png");
-    //background->setPosition(Vec2(vis))
+    background->setPosition(Vec2(visibleSize.width/2 + origin.x , visibleSize.height/2 + origin.y));
 
 
     startMenu = MenuItemImage::create("res/jouer.png", "res/jouer-select.png", CC_CALLBACK_1(MenuScene::changeScene, this));
