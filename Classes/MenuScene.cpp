@@ -30,9 +30,8 @@ bool MenuScene::init()
     exitMenu->setPosition((visibleSize.width / 6 + origin.x) * 5, visibleSize.height / 5 + origin.y); //-exitMenu->getContentSize().height - 20);
     this->addChild(menu);
 
-    // Musique //
-    auto music = AudioEngine::play2d("music/Menu.mp3", false);
-
+    // Music Menu Theme
+    auto music = AudioEngine::play2d("music/Menu.mp3", true, 0.3f);
 
     return true;
 }
@@ -42,7 +41,8 @@ void MenuScene::changeScene(Ref* pSender) {
     //Director::getInstance()->pushScene(TransitionFade::create(1.0f, scene));
 }
 
-void MenuScene::exitGame(Ref* pSender) {
+void MenuScene::exitGame(Ref* pSender)
+{
     Director::getInstance()->end();
 }
 

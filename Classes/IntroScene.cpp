@@ -23,7 +23,7 @@ bool IntroScene::init()
     // add a label shows "Lemmings"
     // create and initialize a label
     
-    auto label = Label::createWithTTF("Lemmings", "font/pixelArt.ttf", 120);
+    auto label = Label::createWithTTF("Bitch Studio", "font/pixelArt.ttf", 120);
     auto fadeIn = FadeIn::create(2.0f);
     auto delay = DelayTime::create(1);
     auto fadeOut = FadeOut::create(0.5f);

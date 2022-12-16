@@ -24,7 +24,7 @@ AppDelegate::~AppDelegate()
 void AppDelegate::initGLContextAttrs()
 {
     // set OpenGL context attributes: red,green,blue,alpha,depth,stencil,multisamplesCount
-    GLContextAttrs glContextAttrs = {8, 8, 8, 8, 24, 8, 0};
+    GLContextAttrs glContextAttrs = {8, 8, 8, 8, 24, 8, 0}; 
 
     GLView::setGLContextAttrs(glContextAttrs);
 }
@@ -46,11 +46,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     #if(CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
         glview = cocos2d::GLViewImpl::create("Lemmings");
     #else
-
-       /* glview = cocos2d::GLViewImpl::createWithFullScreen("Lemmings");*/
-        glview = cocos2d::GLViewImpl::create("Lemmings");
-
-#endif
+        glview = cocos2d::GLViewImpl::createWithFullScreen("Lemmings");
+        /*glview = cocos2d::GLViewImpl::create("Lemmings");*/
+    #endif
         director->setOpenGLView(glview);
     }
 
