@@ -15,7 +15,7 @@ bool MenuScene::init() {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    auto background = Sprite::create("res/Bannière.png");
+    auto background = Sprite::create("res/background.png");
     background->setPosition(Vec2(visibleSize.width/2 + origin.x , visibleSize.height/2 + origin.y));
 
 

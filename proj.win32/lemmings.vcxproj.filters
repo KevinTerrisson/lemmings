@@ -54,7 +54,7 @@
     <ClInclude Include="X:\lemmings\Classes\MenuScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="X:\lemmings\Resources\res\Bannière.png">
+    <ClInclude Include="X:\lemmings\Resources\res\background.png">
       <Filter>Resources\res</Filter>
     </ClInclude>
   </ItemGroup>
