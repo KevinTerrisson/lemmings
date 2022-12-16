@@ -4,7 +4,7 @@
 #define __LEVEL_ONE_SCENE_H__
 
 
-class Level_one_scene : public cocos2d::Scene
+class LevelOneScene : public cocos2d::Scene
 {
 public:
 	static cocos2d::Scene* createScene();

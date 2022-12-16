@@ -1,11 +1,11 @@
-#include "Level_one_scene.h"
+#include "LevelOneScene.h"
 
 
 USING_NS_CC;
 
-Scene* Level_one_scene::createScene()
+Scene* LevelOneScene::createScene()
 {
-    return Level_one_scene::create();
+    return LevelOneScene::create();
 }
 
 static void problemLoading(const char* filename)
@@ -13,12 +13,12 @@ static void problemLoading(const char* filename)
     printf("Error while loading: %s\n", filename);
 }
 
-bool Level_one_scene::init()
+bool LevelOneScene::init()
 {
     if (!Scene::init())
     {
 
-        auto map = TMXTiledMap::create("map.tmx");
+        auto map = TMXTiledMap::create("lemmings / Resources / tiled / map.tmx");
         addChild(map, 0, 99); // with a tag of '99'
 
        /* _tileMap = new CCTMXTiledMap();

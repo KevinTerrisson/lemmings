@@ -4,27 +4,18 @@
     <ClCompile Include="X:\lemmings\Classes\AppDelegate.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\IntroScene.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
     <ClCompile Include="X:\lemmings\proj.win32\main.cpp">
       <Filter>Source Files\proj.win32</Filter>
     </ClCompile>
     <ClCompile Include="X:\lemmings\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="X:\lemmings\Classes\MenuScene.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="Level_one_scene.cpp">
+    <ClCompile Include="LevelOneScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\IntroScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="X:\lemmings\proj.win32\main.h">
@@ -54,11 +45,7 @@
     <ClInclude Include="X:\lemmings\Resources\res\quitter-select.PNG">
       <Filter>Resources\res</Filter>
     </ClInclude>
-    <ClInclude Include="X:\lemmings\Classes\MenuScene.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="X:\lemmings\Resources\res\Bannière.png" />
-    <ClInclude Include="Level_one_scene.h">
+    <ClInclude Include="LevelOneScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
