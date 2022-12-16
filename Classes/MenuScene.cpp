@@ -1,14 +1,15 @@
 #include "MenuScene.h"
-#include "IntroScene.h"
+#include "AudioEngine.h"
 
 USING_NS_CC;
 
-Scene* MenuScene::createScene() {
-    return MenuScene::create();
-}
+// on "init" you need to initialize your instance
+bool MenuScene::init()
+{
+    m_time = 0.0f;
 
-bool MenuScene::init() {
-    if (!Scene::init()) {
+    if (!Scene::init())
+    {
         return false;
     }
 
@@ -29,8 +30,15 @@ bool MenuScene::init() {
     exitMenu->setPosition((visibleSize.width / 6 + origin.x) * 5, visibleSize.height / 5 + origin.y); //-exitMenu->getContentSize().height - 20);
     this->addChild(menu);
 
-    return true;
-}
+    if (label == nullptr)
+    {
+        //problemLoading("'font/pixelArt.ttf'");
+    }
+    else
+    {
+        // position the label on the center of the screen
+        label->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+
 
 void MenuScene::changeScene(Ref* pSender) {
     //auto scene = IntroScene::createScene();
@@ -39,4 +47,17 @@ void MenuScene::changeScene(Ref* pSender) {
 
 void MenuScene::exitGame(Ref* pSender) {
     Director::getInstance()->end();
+    
+        // add the label as a child to this layer
+        this->addChild(label, 1);
+    }
+
+    //retain();
+    return true;
+}
+
+void MenuScene::update(float dt)
+{
+    m_time += dt;
+
 }
