@@ -18,26 +18,21 @@ bool LevelScene::init()
         return false;
     }
 
-    auto visibleSize = Director::getInstance()->getVisibleSize();
-    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    //auto visibleSize = Director::getInstance()->getVisibleSize();
+    //Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    // create and initialize a label
+    //// create and initialize a label
+    //auto label = Label::createWithTTF("Game Window", "font/pixelArt.ttf", 120);
+  
+    //// position the label on the center of the screen
+    //label->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
 
-    auto label = Label::createWithTTF("Game Window", "font/pixelArt.ttf", 120);
+    //// add the label as a child to this layer
+    //this->addChild(label, 1);
 
-    if (label == nullptr)
-    {
-        //problemLoading("'font/pixelArt.ttf'");
-        //problemLoading("'sfx/Introduction.mp3'");
-    }
-    else
-    {
-        // position the label on the center of the screen
-        label->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+    auto map = TMXTiledMap::create("tiled/tileMap.tmx");
 
-        // add the label as a child to this layer
-        this->addChild(label, 1);
-    }
+    addChild(map); // with a tag of '99'
 
     return true;
 }

@@ -40,17 +40,16 @@ bool MenuScene::init()
 void MenuScene::changeScene(Ref* pSender)
 {
     //clic sfx button
-    auto music = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
+    auto clic = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
 
     // changing scene
     auto m_levelScene = LevelScene::createScene();
-    //Director::getInstance()->replaceScene((Scene*)m_levelScene);
     Director::getInstance()->replaceScene(m_levelScene);
 }
 
 void MenuScene::exitGame(Ref* pSender)
 {
-    auto music = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
+    auto clic = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
     Director::getInstance()->end();
 }
 
