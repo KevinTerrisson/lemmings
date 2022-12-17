@@ -32,7 +32,7 @@ bool LevelScene::init()
 
     auto map = TMXTiledMap::create("tiled/tileMap.tmx");
 
-    addChild(map); // with a tag of '99'
+    addChild(map);
 
     return true;
 }
