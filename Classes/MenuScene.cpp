@@ -1,8 +1,11 @@
 #include "MenuScene.h"
-#include "AudioEngine.h"
-#include "LevelScene.h"
 
 USING_NS_CC;
+
+Scene* MenuScene::createScene()
+{
+    return MenuScene::create();
+}
 
 // on "init" you need to initialize your instance
 bool MenuScene::init()
@@ -43,8 +46,8 @@ void MenuScene::changeScene(Ref* pSender)
     auto clic = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
 
     // changing scene
-    auto m_levelScene = LevelScene::createScene();
-    Director::getInstance()->replaceScene(m_levelScene);
+    auto gameScene = GameScene::createScene();
+    Director::getInstance()->replaceScene(gameScene);
 }
 
 void MenuScene::exitGame(Ref* pSender)
