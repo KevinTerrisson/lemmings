@@ -21,6 +21,9 @@ void TileMap::loadTileMap()
     // Chargement de la carte à tuiles à partir d'un fichier .tmx
     _tileMap = TMXTiledMap::create("tiled/level.tmx");
 
+    // set to top position
+    _tileMap->setPosition(Vec2(0, 120));
+
     // ajout de la carte à tuiles à la scène
     this->addChild(_tileMap);
 }
