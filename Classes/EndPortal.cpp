@@ -1,34 +1,34 @@
-#include "StartPortal.h"
+#include "EndPortal.h"
 
-bool StartPortal::init()
+bool EndPortal::init()
 {
     if (!Sprite::init())
     {
         return false;
     }
 
-    //createAppearingPortal();
-    //createDisappearingPortal();
-    //createIdlePortal();
+    //void createAppearingPortal();
+    //void createDisappearingPortal();
+    //void createIdlePortal();
 
     return true;
 }
 
-void StartPortal::createAppearingPortal()
+void EndPortal::createAppearingPortal()
 {
     // Load the sprite sheet that contains the frames for the portal animation
     auto spritecache = SpriteFrameCache::getInstance();
-    spritecache->addSpriteFramesWithFile("assets/start-portal/appearing/start-portal-appearing.plist");
+    spritecache->addSpriteFramesWithFile("assets/end-portal/appearing/end-portal-appearing.plist");
 
     // Create the sprite and add it to the scene
-    auto portalSprite = Sprite::createWithSpriteFrameName("start-portal-appearing-0.png");
+    auto portalSprite = Sprite::createWithSpriteFrameName("end-portal-appearing-0.png");
     this->addChild(portalSprite);
 
     // Create an animation using the frames from the sprite sheet
     Vector<SpriteFrame*> frames;
     for (int i = 0; i <= 7; i++)
     {
-        auto frame = spritecache->getSpriteFrameByName(StringUtils::format("start-portal-appearing-%d.png", i));
+        auto frame = spritecache->getSpriteFrameByName(StringUtils::format("end-portal-appearing-%d.png", i));
         frames.pushBack(frame);
     }
 
@@ -39,21 +39,21 @@ void StartPortal::createAppearingPortal()
     portalSprite->runAction(RepeatForever::create(animate));
 }
 
-void StartPortal::createDisappearingPortal()
+void EndPortal::createDisappearingPortal()
 {
     // Load the sprite sheet that contains the frames for the portal animation
     auto spritecache = SpriteFrameCache::getInstance();
-    spritecache->addSpriteFramesWithFile("assets/start-portal/disappearing/start-portal-disappearing.plist");
+    spritecache->addSpriteFramesWithFile("assets/end-portal/disappearing/end-portal-disappearing.plist");
 
     // Create the sprite and add it to the scene
-    auto portalSprite = Sprite::createWithSpriteFrameName("start-portal-disappearing-0.png");
+    auto portalSprite = Sprite::createWithSpriteFrameName("end-portal-disappearing-0.png");
     this->addChild(portalSprite);
 
     // Create an animation using the frames from the sprite sheet
     Vector<SpriteFrame*> frames;
     for (int i = 0; i <= 5; i++)
     {
-        auto frame = spritecache->getSpriteFrameByName(StringUtils::format("start-portal-disappearing-%d.png", i));
+        auto frame = spritecache->getSpriteFrameByName(StringUtils::format("end-portal-disappearing-%d.png", i));
         frames.pushBack(frame);
     }
 
@@ -64,21 +64,21 @@ void StartPortal::createDisappearingPortal()
     portalSprite->runAction(RepeatForever::create(animate));
 }
 
-void StartPortal::createIdlePortal()
+void EndPortal::createIdlePortal()
 {
     // Load the sprite sheet that contains the frames for the portal animation
     auto spritecache = SpriteFrameCache::getInstance();
-    spritecache->addSpriteFramesWithFile("assets/start-portal/idle/start-portal-idle.plist");
+    spritecache->addSpriteFramesWithFile("assets/end-portal/idle/end-portal-idle.plist");
 
     // Create the sprite and add it to the scene
-    auto portalSprite = Sprite::createWithSpriteFrameName("start-portal-idle-0.png");
+    auto portalSprite = Sprite::createWithSpriteFrameName("end-portal-idle-0.png");
     this->addChild(portalSprite);
 
     // Create an animation using the frames from the sprite sheet
     Vector<SpriteFrame*> frames;
     for (int i = 0; i <= 7; i++)
     {
-        auto frame = spritecache->getSpriteFrameByName(StringUtils::format("start-portal-idle-%d.png", i));
+        auto frame = spritecache->getSpriteFrameByName(StringUtils::format("end-portal-idle-%d.png", i));
         frames.pushBack(frame);
     }
 

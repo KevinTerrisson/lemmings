@@ -3,10 +3,25 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level.tmx",
+    "activeFile": "X:/Zeleth/Resources/tiled/map.tmx",
     "expandedProjectPaths": [
     ],
+    "file.lastUsedOpenFilter": "Tous les Fichiers (*)",
     "fileStates": {
+        "X:/Zeleth/Resources/tiled/collisionTileset.tsx": {
+            "scaleInDock": 1
+        },
+        "X:/Zeleth/Resources/tiled/map.tmx": {
+            "scale": 3,
+            "selectedLayer": 15,
+            "viewCenter": {
+                "x": 364.33333333333326,
+                "y": 243
+            }
+        },
+        "X:/Zeleth/Resources/tiled/pokemonStyleGameTileset.tsx": {
+            "scaleInDock": 1
+        },
         "assets.tsx": {
             "scaleInDock": 4,
             "scaleInEditor": 1
@@ -17,9 +32,9 @@
         },
         "level.tmx": {
             "scale": 3,
-            "selectedLayer": 0,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 210.66666666666663,
+                "x": 251,
                 "y": 126.66666666666664
             }
         },
@@ -40,15 +55,14 @@
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "level.tmx",
-        "background.tsx",
-        "map.tsx"
+        "X:/Zeleth/Resources/tiled/map.tmx"
     ],
     "project": "lemmings.tiled-project",
     "recentFiles": [
+        "X:/Zeleth/Resources/tiled/map.tmx",
+        "level.tmx",
         "map.tsx",
         "background.tsx",
-        "level.tmx",
         "start_portal.tsx",
         "assets.tsx"
     ],

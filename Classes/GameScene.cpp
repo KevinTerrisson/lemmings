@@ -30,8 +30,23 @@ bool GameScene::init()
 
     // Création de l'objet MainCharacter
     auto startPortal = StartPortal::create();
+
+    // Création de l'objet MainCharacter
+    auto endPortal = EndPortal::create();
+
+    // définition de la position du portal
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    auto origin = Director::getInstance()->getVisibleOrigin();
+    auto portalPosition = Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
+
+    startPortal->setPosition(portalPosition);
+    endPortal->setPosition(portalPosition);
+
+    //ajout de MainCharacter à la scène
+    this->addChild(startPortal);
+
     // ajout de MainCharacter à la scène
-    this->addChild(startPortal, 9);
+    this->addChild(endPortal);
 
     return true;
 }

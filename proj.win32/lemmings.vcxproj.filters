@@ -25,6 +25,9 @@
     <ClCompile Include="..\Classes\StartPortal.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\EndPortal.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h">
@@ -73,6 +76,9 @@
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\StartPortal.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EndPortal.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,7 +2,7 @@
 
 USING_NS_CC;
 
-class StartPortal : public Sprite
+class EndPortal : public Sprite
 {
 public:
 	virtual bool init();
@@ -12,5 +12,5 @@ public:
 	void createIdlePortal();
 
 	// implement the "static create()" method manually
-	CREATE_FUNC(StartPortal);
+	CREATE_FUNC(EndPortal);
 };

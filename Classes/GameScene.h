@@ -2,6 +2,7 @@
 
 #include "TileMap.h"
 #include "StartPortal.h"
+#include "EndPortal.h"
 
 USING_NS_CC;
 
