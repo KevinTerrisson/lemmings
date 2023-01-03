@@ -31,7 +31,7 @@ bool IntroScene::init()
 void IntroScene::animateTitle()
 {
     // Title Infinity Games
-    auto title = Label::createWithTTF("Studio Name", "font/pixelArt.ttf", 120);
+    auto title = Label::createWithTTF("Lemmings Studio", "font/pixelArt.ttf", 120);
     title->setOpacity(0);
     title->setPosition(_center);
 

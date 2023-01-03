@@ -2,26 +2,38 @@
 
 #include "StartPortal.h"
 #include "EndPortal.h"
+#include "Lemmings.h"
 
 USING_NS_CC;
 
 class TileMap : public Node
 {
 public:
+    //init
     virtual bool init();
 
+    // map
     void loadTileMap();
     void enlargeTileMap(float scale);
+
+    // portals
     void createStartPortal();
     void createEndPortal();
 
-    void gameLoop();
+    // lemmings
+    void createLemmings();
 
-    void update(float delta);
+    // game
+    void gameLoop();
 
     // implement the "static create()" method manually
     CREATE_FUNC(TileMap);
 
 private:
     TMXTiledMap* _tileMap;
+
+    Lemmings* _lemmings;
+
+    StartPortal* _startPortal;
+    EndPortal* _endPortal;
 };
