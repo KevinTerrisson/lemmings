@@ -16,6 +16,9 @@ public:
     void advance();
     void backOff();
 
+    //effects
+    void explosion();
+
     // implement the "static create()" method manually
     CREATE_FUNC(Lemmings);
 

@@ -44,7 +44,6 @@ void Lemmings::drop()
     this->setPosition(position);
 }
 
-
 void Lemmings::advance()
 {
     // Récupération de la position actuelle du sprite
@@ -67,4 +66,9 @@ void Lemmings::backOff()
 
     // Affectation de la nouvelle position au sprite
     this->setPosition(position);
+}
+
+void Lemmings::explosion()
+{
+    //  explosion
 }

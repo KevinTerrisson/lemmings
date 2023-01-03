@@ -4,6 +4,11 @@
  <tileset firstgid="57" source="map.tsx"/>
  <tileset firstgid="127" name="collisions" tilewidth="16" tileheight="16" tilecount="1" columns="1">
   <image source="../Assets/collisions.png" width="16" height="16"/>
+  <tile id="0">
+   <properties>
+    <property name="collidable" type="bool" value="true"/>
+   </properties>
+  </tile>
  </tileset>
  <layer id="1" name="Background" width="30" height="15" locked="1">
   <data encoding="base64" compression="zlib">
@@ -33,7 +38,7 @@
    <point/>
   </object>
  </objectgroup>
- <layer id="7" name="Collisions" width="30" height="15" visible="0" opacity="0.34">
+ <layer id="7" name="Collisions" width="30" height="15" opacity="0.21">
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIKhC+qpjEmxl1pg1N6BtRcAyogN5Q==
   </data>
