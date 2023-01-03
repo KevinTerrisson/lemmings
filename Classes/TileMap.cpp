@@ -110,6 +110,4 @@ void TileMap::gameLoop()
     this->runAction(sequenceIdle);
 
     // apparition des lemmings
-
-
 }
