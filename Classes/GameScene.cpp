@@ -28,25 +28,5 @@ bool GameScene::init()
     // ajout de la carte à tuiles à la scène
     this->addChild(_tileMap);
 
-    // Création de l'objet MainCharacter
-    auto startPortal = StartPortal::create();
-
-    // Création de l'objet MainCharacter
-    auto endPortal = EndPortal::create();
-
-    // définition de la position du portal
-    auto visibleSize = Director::getInstance()->getVisibleSize();
-    auto origin = Director::getInstance()->getVisibleOrigin();
-    auto portalPosition = Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
-
-    startPortal->setPosition(portalPosition);
-    endPortal->setPosition(portalPosition);
-
-    //ajout de MainCharacter à la scène
-    this->addChild(startPortal);
-
-    // ajout de MainCharacter à la scène
-    this->addChild(endPortal);
-
     return true;
 }

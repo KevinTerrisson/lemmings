@@ -9,7 +9,7 @@ bool StartPortal::init()
 
     //createAppearingPortal();
     //createDisappearingPortal();
-    //createIdlePortal();
+    createIdlePortal();
 
     return true;
 }
@@ -36,7 +36,7 @@ void StartPortal::createAppearingPortal()
     auto animate = Animate::create(animation);
 
     // Run the animation forever
-    portalSprite->runAction(RepeatForever::create(animate));
+    portalSprite->runAction(animate);
 }
 
 void StartPortal::createDisappearingPortal()
@@ -61,7 +61,7 @@ void StartPortal::createDisappearingPortal()
     auto animate = Animate::create(animation);
 
     // Run the animation forever
-    portalSprite->runAction(RepeatForever::create(animate));
+    portalSprite->runAction(animate);
 }
 
 void StartPortal::createIdlePortal()
