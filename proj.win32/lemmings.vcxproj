@@ -809,29 +809,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
     <ClInclude Include="LevelOneScene.h" />
-=======
-    <ClInclude Include="..\Classes\GameScene.h" />
-    <ClInclude Include="..\Classes\EndPortal.h" />
-    <ClInclude Include="..\Classes\StartPortal.h" />
-    <ClInclude Include="..\Classes\TileMap.h" />
-    <ClInclude Include="..\Classes\MenuScene.h" />
-    <ClInclude Include="Lemmings.h" />
->>>>>>> Stashed changes
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h" />
     <ClInclude Include="X:\lemmings\proj.win32\main.h" />
     <ClInclude Include="X:\lemmings\proj.win32\resource.h" />
-<<<<<<< Updated upstream
     <ClCompile Include="LevelOneScene.cpp" />
-=======
-    <ClCompile Include="..\Classes\GameScene.cpp" />
-    <ClCompile Include="..\Classes\EndPortal.cpp" />
-    <ClCompile Include="..\Classes\StartPortal.cpp" />
-    <ClCompile Include="..\Classes\TileMap.cpp" />
-    <ClCompile Include="..\Classes\MenuScene.cpp" />
-    <ClCompile Include="Lemmings.cpp" />
->>>>>>> Stashed changes
     <ClCompile Include="X:\lemmings\Classes\AppDelegate.cpp" />
     <ClCompile Include="X:\lemmings\proj.win32\main.cpp" />
     <ResourceCompile Include="X:\lemmings\proj.win32\game.rc" />
