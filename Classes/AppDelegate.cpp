@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "SceneManager.h"
+#include "IntroScene.h"
 
 #if USE_AUDIO_ENGINE
 #include "audio/include/AudioEngine.h"
@@ -60,8 +60,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
     
-    m_pManager = SceneManager::create();
-    m_pManager->RunIntroScene();
+    /*auto scene = IntroScene::createScene();*/
+    auto scene = GameScene::createScene();
+    director->runWithScene(scene);
 
     return true;
 }

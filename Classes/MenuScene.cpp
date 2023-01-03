@@ -1,7 +1,11 @@
 #include "MenuScene.h"
-#include "AudioEngine.h"
 
 USING_NS_CC;
+
+Scene* MenuScene::createScene()
+{
+    return MenuScene::create();
+}
 
 // on "init" you need to initialize your instance
 bool MenuScene::init()
@@ -36,14 +40,19 @@ bool MenuScene::init()
     return true;
 }
 
-void MenuScene::changeScene(Ref* pSender) {
-    auto music = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
-    //auto scene = IntroScene::createScene();
-    //Director::getInstance()->pushScene(TransitionFade::create(1.0f, scene));
+void MenuScene::changeScene(Ref* pSender)
+{
+    //clic sfx button
+    auto clic = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
+
+    // changing scene
+    auto gameScene = GameScene::createScene();
+    Director::getInstance()->replaceScene(gameScene);
 }
 
-void MenuScene::exitGame(Ref* pSender) {
-    auto music = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
+void MenuScene::exitGame(Ref* pSender)
+{
+    auto clic = AudioEngine::play2d("sfx/ClickMenu.mp3", false);
     Director::getInstance()->end();
 }
 

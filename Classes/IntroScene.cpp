@@ -1,64 +1,61 @@
-#include "AppDelegate.h"
-#include "SceneManager.h"
 #include "IntroScene.h"
-#include "AudioEngine.h"
 
-USING_NS_CC;
+using namespace CocosDenshion;
 
-extern AppDelegate* g_pApp;
+Scene* IntroScene::createScene()
+{
+    // Preload logo intro sound
+    SimpleAudioEngine::getInstance()->preloadEffect("sfx/Introduction.mp3");
 
-// on "init" you need to initialize your instance
+    return IntroScene::create();
+}
+
 bool IntroScene::init()
 {
-    m_time = 0.0f;
-
-    if ( !Scene::init() )
+    if (!Scene::init())
     {
         return false;
     }
 
-    auto visibleSize = Director::getInstance()->getVisibleSize();
-    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    // Determine the center coordinates of the screen
+    _visibleSize = Director::getInstance()->getVisibleSize();
+    _origin = Director::getInstance()->getVisibleOrigin();
+    _center = Vec2(_origin.x + _visibleSize.width / 2, _origin.y + _visibleSize.height / 2);
 
-    // add a label shows "Lemmings"
-    // create and initialize a label
-    
-    auto label = Label::createWithTTF("Bitch Studio", "font/pixelArt.ttf", 120);
-    auto fadeIn = FadeIn::create(2.0f);
-    auto delay = DelayTime::create(1);
-    auto fadeOut = FadeOut::create(0.5f);
-    auto seq = Sequence::create(fadeIn, delay, fadeOut, nullptr);
+    animateTitle();
+    animateTransition();
 
-    if (label == nullptr)
-    {
-        //problemLoading("'font/pixelArt.ttf'");
-        //problemLoading("'sfx/Introduction.mp3'");
-    }
-    else
-    {
-        // position the label on the center of the screen
-        label->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
-        label->setOpacity(0);
-
-        // add the label as a child to this layer
-        this->addChild(label, 1);
-
-        auto music = AudioEngine::play2d("sfx/Introduction.mp3", false);
-
-        label->runAction(seq);
-    }
-
-    scheduleUpdate();
-    //retain();
     return true;
 }
 
-void IntroScene::update(float dt)
+void IntroScene::animateTitle()
 {
-    m_time += dt;
+    // Title Infinity Games
+    auto title = Label::createWithTTF("Studio Name", "font/pixelArt.ttf", 120);
+    title->setOpacity(0);
+    title->setPosition(_center);
 
-    if (m_time > 5.0f)
-    {
-        g_pApp->m_pManager->RunMenuScene();
-    }
+    this->addChild(title);
+
+    auto fadeIn = FadeIn::create(2.0f);
+    auto delayTitle = DelayTime::create(1.0f);
+    auto fadeOut = FadeOut::create(0.5f);
+    auto animationTitle = Sequence::create(fadeIn, delayTitle, fadeOut, nullptr);
+
+    title->runAction(animationTitle);
 }
+
+void IntroScene::animateTransition()
+{
+    // run music effect
+    SimpleAudioEngine::getInstance()->playEffect("sfx/Introduction.mp3");
+
+    auto delayTransistionScene = DelayTime::create(3.5);
+    auto replace = CallFunc::create([]() {
+        Director::getInstance()->replaceScene(MenuScene::createScene());
+        });
+
+    auto transistionScene = Sequence::create(delayTransistionScene, replace, nullptr);
+    this->runAction(transistionScene);
+}
+

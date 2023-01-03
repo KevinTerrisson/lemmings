@@ -1,15 +1,17 @@
-#ifndef __MENU_SCENE_H__
-#define __MENU_SCENE_H__
-
 #include "cocos2d.h"
+#include "GameScene.h"
+#include "AudioEngine.h"
 
-class MenuScene : public cocos2d::Scene
+USING_NS_CC;
+
+class MenuScene : public Scene
 {
 public:
-    
+	static Scene* createScene();
+
 	virtual bool init();
-	cocos2d::MenuItemImage* startMenu;
-	cocos2d::MenuItemImage* exitMenu;
+	MenuItemImage* startMenu;
+	MenuItemImage* exitMenu;
 	void changeScene(Ref* pSender);
 	void exitGame(Ref* pSender);
 
@@ -20,5 +22,3 @@ public:
 
     float m_time;
 };
-
-#endif // __MENU_SCENE_H__
