@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="3">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="3">
  <tileset firstgid="1" source="background.tsx"/>
  <tileset firstgid="57" source="map.tsx"/>
+ <tileset firstgid="127" name="collisions" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="../Assets/collisions.png" width="16" height="16"/>
+ </tileset>
  <layer id="1" name="Background" width="30" height="15" locked="1">
   <data encoding="base64" compression="zlib">
    eJzt0tsKglAQRuFtllpWkOamMrISOoGVkNb7P5kr2LeBSkwgXXx3PywYRiultLExdE0Lo+7+k191u8JCr8HeRh8DOHBbdj0MG+xH8DHGBFOh+8wQIMQckVD3/aNLrBBjLdRNsMUOe6RC3QOOOOGMi1A3wxU33JELdR8oUOKJl1D37/sqT/MnvQ==
@@ -17,11 +20,6 @@
    eJwrYGBgKCCAq9BwNQN2kI+mLxmIU4C4EItabPbA1BfgsQOfveVQOheI8wjYW47ExqceH6hkgIQHuj+I9S8sbEnxKzb78cULun3lONxHbQCyq4KBOv4kBRCTTkfBKBgFowAZAAAlbiQr
   </data>
  </layer>
- <layer id="5" name="Objects" width="30" height="15" locked="1">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjALqAm8i1RVhESuhpkNGwSggAgAADeUBMg==
-  </data>
- </layer>
  <layer id="4" name="Platform" width="30" height="15" locked="1">
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIKhC2yA2BKIrYDYGohtCWCYWisseuxIsNcNiN1JwM545DzIsBefecRicuylBqbUXlL9DlOPy14A114azQ==
@@ -35,4 +33,9 @@
    <point/>
   </object>
  </objectgroup>
+ <layer id="7" name="Collisions" width="30" height="15" visible="0" opacity="0.34">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIKhC+qpjEmxl1pg1N6BtRcAyogN5Q==
+  </data>
+ </layer>
 </map>
