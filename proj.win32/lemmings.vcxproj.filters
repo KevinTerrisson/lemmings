@@ -13,6 +13,9 @@
     <ClCompile Include="LevelOneScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Lemmings.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h">
@@ -46,6 +49,9 @@
       <Filter>Resources\res</Filter>
     </ClInclude>
     <ClInclude Include="LevelOneScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Lemmings.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
