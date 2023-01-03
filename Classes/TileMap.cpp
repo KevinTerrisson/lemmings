@@ -47,8 +47,8 @@ void TileMap::update(float delta)
 
 void TileMap::createStartPortal()
 {
-    // Création de l'objet MainCharacter
-    auto startPortal = StartPortal::create();
+    // Création de l'objet EndPortal
+    startPortal = StartPortal::create();
 
     // Obtain the object group named "Objects"
     TMXObjectGroup* objectGroup = _tileMap->getObjectGroup("Objects");
@@ -63,14 +63,14 @@ void TileMap::createStartPortal()
     // Move the tile map by the necessary distance
     startPortal->setPosition(Vec2(x * 4, y * 4 + 120));
 
-    //ajout de MainCharacter à la scène
+    //ajout de StartPortal à la scène
     this->addChild(startPortal);
 }
 
 void TileMap::createEndPortal()
 {
     // Création de l'objet EndPortal
-    auto endPortal = EndPortal::create();
+    endPortal = EndPortal::create();
 
     // Obtain the object group named "Objects"
     TMXObjectGroup* objectGroup = _tileMap->getObjectGroup("Objects");
@@ -91,7 +91,25 @@ void TileMap::createEndPortal()
 
 void TileMap::gameLoop()
 {
-    // create portals
+    // Create the portals (0s)
     createStartPortal();
     createEndPortal();
+
+    // starting animation (1s)
+    auto delayStart = DelayTime::create(1.0f);
+    auto startPortalAppearingFunc = CallFunc::create(CC_CALLBACK_0(StartPortal::appearingPortalAnimation, startPortal));
+    auto endPortalAppearingFunc = CallFunc::create(CC_CALLBACK_0(EndPortal::appearingPortalAnimation, endPortal));
+    auto sequenceStart = Sequence::create(delayStart, startPortalAppearingFunc, endPortalAppearingFunc, nullptr);
+    this->runAction(sequenceStart);
+
+    //idle animation (1.8s)
+    auto delayIdle = DelayTime::create(1.8f);
+    auto startPortalIdleFunc = CallFunc::create(CC_CALLBACK_0(StartPortal::idlePortalAnimation, startPortal));
+    auto endPortalIdleFunc = CallFunc::create(CC_CALLBACK_0(EndPortal::idlePortalAnimation, endPortal));
+    auto sequenceIdle = Sequence::create(delayIdle, startPortalIdleFunc, endPortalIdleFunc, nullptr);
+    this->runAction(sequenceIdle);
+
+    // apparition des lemmings
+
+
 }

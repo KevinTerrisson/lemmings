@@ -24,4 +24,7 @@ public:
 
 private:
     TMXTiledMap* _tileMap;
+
+    StartPortal* startPortal;
+    EndPortal* endPortal;
 };

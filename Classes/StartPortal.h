@@ -7,9 +7,9 @@ class StartPortal : public Sprite
 public:
 	virtual bool init();
 
-	void createAppearingPortal();
-	void createDisappearingPortal();
-	void createIdlePortal();
+	void appearingPortalAnimation();
+	void disappearingPortalAnimation();
+	void idlePortalAnimation();
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(StartPortal);

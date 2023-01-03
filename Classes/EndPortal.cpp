@@ -7,15 +7,13 @@ bool EndPortal::init()
         return false;
     }
 
-    //createAppearingPortal();
-    //createDisappearingPortal();
-    createIdlePortal();
-
     return true;
 }
 
-void EndPortal::createAppearingPortal()
+void EndPortal::appearingPortalAnimation()
 {
+    this->stopAllActions();
+
     // Load the sprite sheet that contains the frames for the portal animation
     auto spritecache = SpriteFrameCache::getInstance();
     spritecache->addSpriteFramesWithFile("assets/end-portal/appearing/end-portal-appearing.plist");
@@ -39,8 +37,10 @@ void EndPortal::createAppearingPortal()
     portalSprite->runAction(animate);
 }
 
-void EndPortal::createDisappearingPortal()
+void EndPortal::disappearingPortalAnimation()
 {
+    this->stopAllActions();
+
     // Load the sprite sheet that contains the frames for the portal animation
     auto spritecache = SpriteFrameCache::getInstance();
     spritecache->addSpriteFramesWithFile("assets/end-portal/disappearing/end-portal-disappearing.plist");
@@ -64,8 +64,10 @@ void EndPortal::createDisappearingPortal()
     portalSprite->runAction(animate);
 }
 
-void EndPortal::createIdlePortal()
+void EndPortal::idlePortalAnimation()
 {
+    this->stopAllActions();
+
     // Load the sprite sheet that contains the frames for the portal animation
     auto spritecache = SpriteFrameCache::getInstance();
     spritecache->addSpriteFramesWithFile("assets/end-portal/idle/end-portal-idle.plist");
