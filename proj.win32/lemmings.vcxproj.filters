@@ -31,6 +31,9 @@
     <ClCompile Include="..\Classes\Lemmings.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SkillsMenu.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="X:\lemmings\Classes\AppDelegate.h">
@@ -85,6 +88,9 @@
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Lemmings.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SkillsMenu.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
