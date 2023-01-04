@@ -129,3 +129,9 @@ void TileMap::gameLoop()
 
     // script lemmings
 }
+
+// Fonction update qui sera appelée à chaque frame
+void TileMap::update(float delta)
+{
+    _lemmings->drop();
+}

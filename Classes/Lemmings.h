@@ -9,8 +9,6 @@ public:
 
     void loadLemmings();
 
-    void update(float delta);
-
     //movements
     void drop();
     void advance();

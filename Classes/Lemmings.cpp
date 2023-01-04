@@ -13,9 +13,6 @@ bool Lemmings::init()
 
     loadLemmings();
 
-    // Planification de l'exécution de la fonction update à chaque frame
-    this->scheduleUpdate();
-
     return true;
 }
 
@@ -24,12 +21,6 @@ void Lemmings::loadLemmings()
     auto mySprite = Sprite::create("Assets/sprite.png");
 
     this->addChild(mySprite);
-}
-
-// Fonction update qui sera appelée à chaque frame
-void Lemmings::update(float delta)
-{
-    drop();
 }
 
 void Lemmings::drop()
