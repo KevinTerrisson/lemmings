@@ -50,4 +50,6 @@ private:
     //portals
     StartPortal* _startPortal;
     EndPortal* _endPortal;
+
+    bool running;
 };

@@ -7,6 +7,8 @@ bool TileMap::init()
         return false;
     }
 
+    running = false;
+
     // Charger la carte à tuiles
     loadTileMap();
 
@@ -146,6 +148,8 @@ void TileMap::gameLoop()
     );
     // run it
     runAction(seq);
+
+    running = true;
 }
 
 bool TileMap::collideGround()
@@ -167,7 +171,7 @@ bool TileMap::collideWall()
     // deplacement horizontal
     Vec2 lemmingsPos = _lemmings->getPosition();
     lemmingsPos.x /= 64.0f;
-    lemmingsPos.x = lemmingsPos.x + 0.2f;
+    //lemmingsPos.x = lemmingsPos.x + 0.2f;
     lemmingsPos.y /= 64.0f;
     bool tileGid = _wallCollisions->getTileGIDAt(lemmingsPos);
     if (tileGid) {
@@ -188,10 +192,24 @@ void TileMap::update(float delta)
         {
             _lemmings->drop();
         }
-
-        if (!collideWall() && collideGround())
+        else
         {
-            _lemmings->advance();
+            if (running)
+            {
+                _lemmings->advance();
+                if (collideWall())
+                {
+                    running = false;
+                }
+            }
+            else
+            {
+                _lemmings->backOff();
+                if (collideWall())
+                {
+                    running = true;
+                }
+            }
         }
     }
 }

@@ -8,8 +8,8 @@ bool Lemmings::init()
     }
 
     // set speed
-    _dropSpeed = 3;
-    _runSpeed = 1;
+    _dropSpeed = 5;
+    _runSpeed = 3;
 
     loadLemmings();
 
