@@ -26,6 +26,16 @@ void TileMap::loadTileMap()
     // Chargement de la carte à tuiles à partir d'un fichier .tmx
     _tileMap = TMXTiledMap::create("tiled/level.tmx");
 
+    // get layers
+    _groundCollisions = _tileMap->getLayer("Ground");
+    _wallCollisions = _tileMap->getLayer("Wall");
+    _obstacleCollisions = _tileMap->getLayer("Obstacle");
+
+    // hide collisions layers
+    _groundCollisions->setVisible(false);
+    _wallCollisions->setVisible(true);
+    _obstacleCollisions->setVisible(true);
+
     // set to top position
     _tileMap->setPosition(Vec2(0, 120));
 
@@ -106,32 +116,82 @@ void TileMap::createLemmings()
 
 void TileMap::gameLoop()
 {
-    // Create the portals (0s)
+    // Create the portals
     createStartPortal();
     createEndPortal();
 
-    // starting animation (1s)
-    auto delayStart = DelayTime::create(1.0f);
-    auto startPortalAppearingFunc = CallFunc::create(CC_CALLBACK_0(StartPortal::appearingPortalAnimation, _startPortal));
-    auto endPortalAppearingFunc = CallFunc::create(CC_CALLBACK_0(EndPortal::appearingPortalAnimation, _endPortal));
-    auto sequenceStart = Sequence::create(delayStart, startPortalAppearingFunc, endPortalAppearingFunc, nullptr);
-    this->runAction(sequenceStart);
+    // create a sequence with the actions and callbacks
+    auto createLemmingsAction = CallFunc::create([this]() { this->createLemmings(); });
 
-    //idle animation (1.8s)
-    auto delayIdle = DelayTime::create(1.8f);
-    auto startPortalIdleFunc = CallFunc::create(CC_CALLBACK_0(StartPortal::idlePortalAnimation, _startPortal));
-    auto endPortalIdleFunc = CallFunc::create(CC_CALLBACK_0(EndPortal::idlePortalAnimation, _endPortal));
-    auto sequenceIdle = Sequence::create(delayIdle, startPortalIdleFunc, endPortalIdleFunc, nullptr);
-    this->runAction(sequenceIdle);
+    auto startPortalAppearing = CallFunc::create(CC_CALLBACK_0(StartPortal::appearingPortalAnimation, _startPortal));
+    auto startPortalIdle = CallFunc::create(CC_CALLBACK_0(StartPortal::idlePortalAnimation, _startPortal));
 
-    // apparition des lemmings
-    createLemmings();
+    auto endPortalAppearing = CallFunc::create(CC_CALLBACK_0(EndPortal::appearingPortalAnimation, _endPortal));
+    auto endPortalIdle = CallFunc::create(CC_CALLBACK_0(EndPortal::idlePortalAnimation, _endPortal));
 
-    // script lemmings
+    auto delayStartingAnimation = DelayTime::create(1.0f);
+    auto delayIdleAnimation = DelayTime::create(0.8f);
+
+    // set sequence
+    auto seq = Sequence::create
+    (
+        delayStartingAnimation,
+        startPortalAppearing,
+        endPortalAppearing,
+        delayIdleAnimation,
+        startPortalIdle,
+        endPortalIdle,
+        createLemmingsAction,
+        nullptr
+    );
+    // run it
+    runAction(seq);
+}
+
+bool TileMap::collideGround()
+{
+    // deplacement vers le bas
+    Vec2 lemmingsPos = _lemmings->getPosition();
+    lemmingsPos.x /= 64.0f;
+    lemmingsPos.y /= 64.0f;
+    lemmingsPos.y = 17.4f - lemmingsPos.y;
+    bool tileGid = _groundCollisions->getTileGIDAt(lemmingsPos);
+    if (tileGid) {
+        // touche le sol
+        return true;
+    }
+}
+
+bool TileMap::collideWall()
+{
+    // deplacement horizontal
+    Vec2 lemmingsPos = _lemmings->getPosition();
+    lemmingsPos.x /= 64.0f;
+    lemmingsPos.x = lemmingsPos.x + 0.2f;
+    lemmingsPos.y /= 64.0f;
+    bool tileGid = _wallCollisions->getTileGIDAt(lemmingsPos);
+    if (tileGid) {
+        // touche le mur
+        return true;
+    }
 }
 
 // Fonction update qui sera appelée à chaque frame
 void TileMap::update(float delta)
 {
-    _lemmings->drop();
+    if (_lemmings)
+    {
+        collideGround();
+        collideWall();
+
+        if (!collideGround())
+        {
+            _lemmings->drop();
+        }
+
+        if (!collideWall() && collideGround())
+        {
+            _lemmings->advance();
+        }
+    }
 }

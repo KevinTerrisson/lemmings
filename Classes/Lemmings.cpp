@@ -40,7 +40,7 @@ void Lemmings::advance()
     // Récupération de la position actuelle du sprite
     Vec2 position = this->getPosition();
 
-    // Mise à jour de la coordonnée y en fonction de la vitesse de chute
+    // Mise à jour de la coordonnée y en fonction de la vitesse de course avant
     position.x += _runSpeed;
 
     // Affectation de la nouvelle position au sprite
@@ -52,7 +52,7 @@ void Lemmings::backOff()
     // Récupération de la position actuelle du sprite
     Vec2 position = this->getPosition();
 
-    // Mise à jour de la coordonnée y en fonction de la vitesse de chute
+    // Mise à jour de la coordonnée y en fonction de la vitesse de course arriere
     position.x -= _runSpeed;
 
     // Affectation de la nouvelle position au sprite

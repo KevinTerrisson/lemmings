@@ -49,11 +49,6 @@
   </object>
  </objectgroup>
  <group id="9" name="Collisions">
-  <layer id="10" name="Wall" width="30" height="15" opacity="0.23">
-   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2D4gAYqqxu1d3DZOwpGAS0AAMfLBAE=
-  </data>
-  </layer>
   <layer id="7" name="Ground" width="30" height="15" opacity="0.26">
    <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIKhAerpiEfByAEAtOANZg==
@@ -62,6 +57,11 @@
   <layer id="8" name="Obstacle" width="30" height="15" opacity="0.26">
    <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUIIPGUXuHtb2jYBSgAwCUYgIF
+  </data>
+  </layer>
+  <layer id="10" name="Wall" width="30" height="15" opacity="0.23">
+   <data encoding="base64" compression="zlib">
+   eJxjYBgFo2D4gAYqqxu1d3DZOwpGAS0AAMfLBAE=
   </data>
   </layer>
  </group>
