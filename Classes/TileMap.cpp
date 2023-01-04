@@ -104,21 +104,6 @@ void TileMap::createLemmings()
     this->addChild(_lemmings);
 }
 
-void TileMap::createSkillsMenu()
-{
-    // Création de l'objet SkillsMenu
-    _skillsMenu = SkillsMenu::create();
-
-    // Obtain the object group named "Objects"
-    TMXObjectGroup* objectGroup = _tileMap->getObjectGroup("Objects");
-
-    // Move the tile map by the necessary distance
-    _skillsMenu->setPosition(Vec2(0, 0));
-
-    // ajout de EndPortal à la scène
-    this->addChild(_skillsMenu);
-}
-
 void TileMap::gameLoop()
 {
     // Create the portals (0s)

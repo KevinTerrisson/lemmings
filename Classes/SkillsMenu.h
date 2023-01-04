@@ -7,7 +7,8 @@ class SkillsMenu : public Node
 public:
 	virtual bool init();
 
-	MenuItemImage* Bomb;
+	void loadSkillsMenu();
+
 	void OnClick(Ref* pSender);
 
 	// implement the "static create()" method manually

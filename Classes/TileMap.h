@@ -3,7 +3,6 @@
 #include "StartPortal.h"
 #include "EndPortal.h"
 #include "Lemmings.h"
-#include "SkillsMenu.h"
 
 USING_NS_CC;
 
@@ -24,9 +23,6 @@ public:
     // lemmings
     void createLemmings();
 
-    // skills menu
-    void createSkillsMenu();
-
     // game
     void gameLoop();
 
@@ -40,6 +36,4 @@ private:
     EndPortal* _endPortal;
 
     Lemmings* _lemmings;
-
-    SkillsMenu* _skillsMenu;
 };
