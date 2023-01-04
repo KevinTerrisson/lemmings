@@ -3,6 +3,7 @@
 #include "StartPortal.h"
 #include "EndPortal.h"
 #include "Lemmings.h"
+#include "SkillsMenu.h"
 
 USING_NS_CC;
 
@@ -23,6 +24,9 @@ public:
     // lemmings
     void createLemmings();
 
+    // skills menu
+    void createSkillsMenu();
+
     // game
     void gameLoop();
 
@@ -32,8 +36,10 @@ public:
 private:
     TMXTiledMap* _tileMap;
 
-    Lemmings* _lemmings;
-
     StartPortal* _startPortal;
     EndPortal* _endPortal;
+
+    Lemmings* _lemmings;
+
+    SkillsMenu* _skillsMenu;
 };
