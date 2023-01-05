@@ -813,6 +813,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="..\Classes\EndPortal.h" />
     <ClInclude Include="..\Classes\Lemmings.h" />
     <ClInclude Include="..\Classes\SkillsMenu.h" />
+    <ClInclude Include="..\Classes\Box.h" />
     <ClInclude Include="..\Classes\StartPortal.h" />
     <ClInclude Include="..\Classes\TileMap.h" />
     <ClInclude Include="..\Classes\MenuScene.h" />
@@ -825,6 +826,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\Classes\EndPortal.cpp" />
     <ClCompile Include="..\Classes\Lemmings.cpp" />
     <ClCompile Include="..\Classes\SkillsMenu.cpp" />
+    <ClCompile Include="..\Classes\Box.cpp" />
     <ClCompile Include="..\Classes\StartPortal.cpp" />
     <ClCompile Include="..\Classes\TileMap.cpp" />
     <ClCompile Include="..\Classes\MenuScene.cpp" />

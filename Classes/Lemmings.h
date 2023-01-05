@@ -9,12 +9,17 @@ public:
 
     void loadLemmings();
 
-    void update(float delta);
-
-    //movements
+    // movements
     void drop();
     void advance();
     void backOff();
+
+    // output
+    void output();
+
+    // effects
+    void disappears();
+    void explosion();
 
     // implement the "static create()" method manually
     CREATE_FUNC(Lemmings);
