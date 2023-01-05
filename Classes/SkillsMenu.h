@@ -9,6 +9,8 @@ public:
 
 	void loadSkillsMenu();
 
+	void SkillsMenuInformation();
+
 	void OnClick(Ref* pSender);
 
 	// implement the "static create()" method manually
@@ -16,4 +18,7 @@ public:
 
 private:
 	bool isButtonPressed = false;
+
+	Size _visibleSize;
+	Vec2 _origin;
 };

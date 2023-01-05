@@ -11,42 +11,78 @@ bool SkillsMenu::init()
         return false;
     }
 
+    _visibleSize = Director::getInstance()->getVisibleSize();
+    _origin = Director::getInstance()->getVisibleOrigin();
+
     loadSkillsMenu();
+
+    SkillsMenuInformation();
 
     return true;
 }
 
 void SkillsMenu::loadSkillsMenu()
 {
-    auto visibleSize = Director::getInstance()->getVisibleSize();
-    Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
-    //auto Back = Sprite::create("res/SkillsMenuBackground");
     auto Bomb = MenuItemImage::create("res/BombButton.png", "res/BombButton2.png", CC_CALLBACK_1(SkillsMenu::OnClick, this));
+    //auto Back = Sprite::create("res/SkillsMenuBackground");
 
     auto menu = Menu::create(Bomb, /*Back, */ nullptr);
   
     this->addChild(menu);
 }
 
+void SkillsMenu::SkillsMenuInformation()
+{
+    // temps restant
+    auto out = Label::createWithTTF("out", "font/pixelArt.ttf", 50);
+    out->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 500, _origin.y + _visibleSize.height / 2));
+
+    auto nbLemmings = Label::createWithTTF("0", "font/pixelArt.ttf", 50);
+    nbLemmings->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 600, _origin.y + _visibleSize.height / 2));
+
+    // pourcentage de lemmings passé à l'arrivé
+    auto in = Label::createWithTTF("in", "font/pixelArt.ttf", 50);
+    in->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 750, _origin.y + _visibleSize.height / 2));
+
+    auto pourcentLemmingsIn = Label::createWithTTF("0", "font/pixelArt.ttf", 50);
+    pourcentLemmingsIn->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 850, _origin.y + _visibleSize.height / 2));
+
+    auto pourcent = Label::createWithTTF("%", "font/pixelArt.ttf", 50);
+    pourcent->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 900, _origin.y + _visibleSize.height / 2));
+
+    // nombre de lemmings sur le terrain
+    auto time = Label::createWithTTF("time", "font/pixelArt.ttf", 50);
+    time->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 1050, _origin.y + _visibleSize.height / 2));
+
+    auto nbTime = Label::createWithTTF("500", "font/pixelArt.ttf", 50);
+    nbTime->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 1200, _origin.y + _visibleSize.height / 2));
+
+
+    std::array<Label*, 7> labels = { out, nbLemmings, in, pourcentLemmingsIn, pourcent, time, nbTime };
+
+    for (auto label : labels) {
+        this->addChild(label);
+    }
+}
+
 void SkillsMenu::OnClick(Ref* pSender)
 {
-    // Toggle the state of the button
+    // Pour changer l'état du bouton
     isButtonPressed = !isButtonPressed;
 
     auto button = dynamic_cast<MenuItemImage*>(pSender);
     if (isButtonPressed)
     {
-        // Change the image of the button to the "pressed" image
+        // changement de l'image du bouton pour la version "pressed"
         button->setNormalImage(Sprite::create("res/BombButton2.png"));
         button->setSelectedImage(Sprite::create("res/BombButton2.png"));
     }
     else
     {
-        // Change the image of the button back to the original image
+        // changement de l'image du bouton pour la version originale
         button->setNormalImage(Sprite::create("res/BombButton.png"));
         button->setSelectedImage(Sprite::create("res/BombButton2.png"));
     }
 
-    // Perform the rest of the action
+    // suite des action
 }
