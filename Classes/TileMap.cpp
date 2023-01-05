@@ -296,6 +296,11 @@ void TileMap::update(float delta)
             {
                 _lemmings->disappears();
                 _lemmings = nullptr;
+
+                if (true) // si tout les lemmings sont passés
+                {
+                    Director::getInstance()->replaceScene(WinScene::createScene());
+                }
             }
             else
             {

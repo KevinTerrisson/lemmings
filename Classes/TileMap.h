@@ -4,6 +4,7 @@
 #include "EndPortal.h"
 #include "Lemmings.h"
 #include "Box.h"
+#include "WinScene.h"
 
 USING_NS_CC;
 
