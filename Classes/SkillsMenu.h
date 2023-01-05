@@ -1,5 +1,4 @@
 #include "cocos2d.h"
-#include "CCScheduler.h"
 
 USING_NS_CC;
 
@@ -25,6 +24,5 @@ private:
 	Size _visibleSize;
 	Vec2 _origin;
 
-	int nbTime;
-	Label* nbTimeLabel;
+	float gameTime;
 };

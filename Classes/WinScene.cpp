@@ -1,3 +1,5 @@
+#include "WinScene.h"
+
 // on "init" you need to initialize your instance
 bool WinScene::init()
 {
