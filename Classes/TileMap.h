@@ -3,7 +3,7 @@
 #include "StartPortal.h"
 #include "EndPortal.h"
 #include "Lemmings.h"
-#include "Obstacle.h"
+#include "Box.h"
 
 USING_NS_CC;
 
@@ -25,11 +25,13 @@ public:
     void createLemmings();
     bool exit();
 
+    // Obstacle
+    void createBox();
+
     //collisions
     bool collideGround();
     bool collideWall();
-
-    //void collideObstacle();
+    bool collideBox();
 
     // game
     void gameLoop();
@@ -39,23 +41,27 @@ public:
     CREATE_FUNC(TileMap);
 
 private:
-    // map
+    // Map
     TMXTiledMap* _tileMap;
 
-    // layers
+    // Layers
     TMXLayer* _groundCollisions;
     TMXLayer* _wallCollisions;
-    TMXLayer* _obstacleCollisions;
-
-    // lemmings
+    TMXLayer* _boxCollisions;
+   
+    // Lemmings
     Lemmings* _lemmings;
     bool direction;
 
-    //portals
+    // Portals
     StartPortal* _startPortal;
     EndPortal* _endPortal;
 
-    // coordonates
+    // Obstacle
+    Box* _box;
+    bool destroy;
+
+    // Coordonates
     int xSpawn;
     int ySpawn;
 
@@ -65,6 +71,9 @@ private:
     int xLemmings;
     int yLemmings;
 
-    //window
+    int xBox;
+    int yBox;
+
+    // Window
     int windowOffset;
 };

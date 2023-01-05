@@ -14,6 +14,7 @@ bool TileMap::init()
     loadTileMap();
 
     // scale tilemap
+    // X 4.0
     enlargeTileMap(4.0f);
 
     gameLoop();
@@ -32,12 +33,12 @@ void TileMap::loadTileMap()
     // get layers
     _groundCollisions = _tileMap->getLayer("Ground");
     _wallCollisions = _tileMap->getLayer("Wall");
-    _obstacleCollisions = _tileMap->getLayer("Obstacle");
+    _boxCollisions = _tileMap->getLayer("Obstacle");
 
     // hide collisions layers
-    _groundCollisions->setVisible(false);
+    _groundCollisions->setVisible(true);
     _wallCollisions->setVisible(true);
-    _obstacleCollisions->setVisible(true);
+    _boxCollisions->setVisible(true);
 
     // set to top position
     _tileMap->setPosition(Vec2(0, windowOffset));
@@ -104,6 +105,9 @@ void TileMap::createLemmings()
     // Création de l'objet Lemmings
     _lemmings = Lemmings::create();
 
+    // set starting direction
+    direction = true;
+
     // Obtain the object group named "Objects"
     TMXObjectGroup* objectGroup = _tileMap->getObjectGroup("Objects");
 
@@ -118,8 +122,6 @@ void TileMap::createLemmings()
 
     // Move the tile map by the necessary distance
     _lemmings->setPosition(Vec2(xLemmings , yLemmings + windowOffset));
-
-    direction = true;
 
     // ajout de EndPortal à la scène
     this->addChild(_lemmings);
@@ -137,11 +139,41 @@ bool TileMap::exit()
     }
 }
 
+void TileMap::createBox()
+{
+    // Création de l'objet Box
+    _box = Box::create();
+
+    // set state
+    destroy = false;
+
+    // Obtain the object group named "Objects"
+    TMXObjectGroup* objectGroup = _tileMap->getObjectGroup("Objects");
+
+    // Obtain the object named "Box" from the object group
+    ValueMap spawn = objectGroup->getObject("Box");
+
+    // Retrieve the x and y coordinates of "spawn"
+    xBox = spawn["x"].asInt();
+    xBox = xBox * 4;
+    yBox = spawn["y"].asInt();
+    yBox = yBox * 4;
+
+    // Move the box map by the necessary distance
+    _box->setPosition(Vec2(xBox, yBox + windowOffset));
+
+    // ajout de box à la scène
+    this->addChild(_box);
+}
+
 void TileMap::gameLoop()
 {
     // Create the portals
     createStartPortal();
     createEndPortal();
+
+    // Create Obstacles
+    createBox();
 
     // create a sequence with the actions and callbacks
     auto createLemmingsAction = CallFunc::create([this]() { this->createLemmings(); });
@@ -199,6 +231,23 @@ bool TileMap::collideWall()
     }
 }
 
+bool TileMap::collideBox()
+{
+    // deplacement horizontal
+    Vec2 lemmingsPos = _lemmings->getPosition();
+    lemmingsPos.x /= 64.0f;
+    lemmingsPos.y /= 64.0f;
+    bool tileGid = _boxCollisions->getTileGIDAt(lemmingsPos);
+    if (tileGid) {
+        // touch the box
+        if (destroy)
+        {
+            return false;
+        }
+        return true;
+    }
+}
+
 // Fonction update qui sera appelée à chaque frame
 void TileMap::update(float delta)
 {
@@ -212,6 +261,7 @@ void TileMap::update(float delta)
         collideWall();
         exit();
 
+        // chute
         if (!collideGround() && !exit())
         {
             _lemmings->drop();
@@ -221,22 +271,25 @@ void TileMap::update(float delta)
         {
             if (direction)
             {
+                // avance
                 _lemmings->advance();
-                if (collideWall())
+                if (collideWall() || collideBox())
                 {
                     direction = false;
                 }
             }
             else
             {
+                // recule
                 _lemmings->backOff();
-                if (collideWall())
+                if (collideWall() || collideBox())
                 {
                     direction = true;
                 }
             }
         }
 
+        // sortie
         if (exit())
         {
             if (yLemmings >= yArrival + windowOffset)
