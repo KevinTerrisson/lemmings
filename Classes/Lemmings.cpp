@@ -8,8 +8,8 @@ bool Lemmings::init()
     }
 
     // set speed
-    _dropSpeed = 3;
-    _runSpeed = 1;
+    _dropSpeed = 5;
+    _runSpeed = 3;
 
     loadLemmings();
 
@@ -59,7 +59,25 @@ void Lemmings::backOff()
     this->setPosition(position);
 }
 
+void Lemmings::output()
+{
+    // Récupération de la position actuelle du sprite
+    Vec2 position = this->getPosition();
+
+    // Mise à jour de la coordonnée y en fonction de la vitesse de chute
+    position.y += _runSpeed;
+
+    // Affectation de la nouvelle position au sprite
+    this->setPosition(position);
+}
+
+void Lemmings::disappears()
+{
+    this->removeFromParent();
+}
+
 void Lemmings::explosion()
 {
     //  explosion
 }
+

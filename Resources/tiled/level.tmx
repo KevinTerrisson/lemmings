@@ -61,7 +61,7 @@
   </layer>
   <layer id="10" name="Wall" width="30" height="15" opacity="0.23">
    <data encoding="base64" compression="zlib">
-   eJxjYBgFo2D4gAYqqxu1d3DZOwpGAS0AAMfLBAE=
+   eJxjYBgFo2D4gIZRe4e1vaNgFNACAAAPcQIB
   </data>
   </layer>
  </group>
