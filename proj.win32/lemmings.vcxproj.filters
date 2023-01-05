@@ -31,7 +31,7 @@
     <ClCompile Include="..\Classes\Lemmings.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\lprieu\Documents\Lemmings\lemmings\Classes\Obstacle.cpp">
+    <ClCompile Include="..\Classes\Box.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -90,7 +90,7 @@
     <ClInclude Include="..\Classes\Lemmings.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\lprieu\Documents\Lemmings\lemmings\Classes\Obstacle.h">
+    <ClInclude Include="..\Classes\Box.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>

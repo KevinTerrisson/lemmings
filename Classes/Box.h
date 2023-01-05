@@ -2,13 +2,16 @@
 
 USING_NS_CC;
 
-class Obstacle : public Sprite
+class Box : public Sprite
 {
 public:
     virtual bool init();
 
-    void loadObstacle();
+    void loadBox();
+
+    // effects
+    void boxDestruction();
 
     // implement the "static create()" method manually
-    CREATE_FUNC(Obstacle);
+    CREATE_FUNC(Box);
 };
