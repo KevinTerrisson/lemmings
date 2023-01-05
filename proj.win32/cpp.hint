@@ -1,0 +1,4 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define CREATE_FUNC(__TYPE__) static __TYPE__* create() { __TYPE__ *pRet = new(std::nothrow) __TYPE__(); if (pRet && pRet->init()) { pRet->autorelease(); return pRet; } else { delete pRet; pRet = nullptr; return nullptr; } }
