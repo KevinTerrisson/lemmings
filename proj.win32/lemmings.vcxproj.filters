@@ -31,6 +31,10 @@
     <ClCompile Include="..\Classes\Lemmings.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SkillsMenu.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WinScene.cpp">
     <ClCompile Include="..\Classes\Box.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
@@ -90,6 +94,10 @@
     <ClInclude Include="..\Classes\Lemmings.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\SkillsMenu.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WinScene.h">
     <ClInclude Include="..\Classes\Box.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
