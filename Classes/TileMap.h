@@ -5,6 +5,7 @@
 #include "Lemmings.h"
 #include "Box.h"
 #include "WinScene.h"
+#include "SkillsMenu.h"
 
 USING_NS_CC;
 
@@ -25,6 +26,9 @@ public:
     // lemmings
     void createLemmings();
     bool exit();
+
+    // Skills
+    void createSkills();
 
     // Obstacle
     void createBox();
@@ -61,6 +65,9 @@ private:
     // Obstacle
     Box* _box;
     bool destroy;
+
+    // Skills
+    SkillsMenu* _skills;
 
     // Coordonates
     int xSpawn;

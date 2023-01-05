@@ -166,14 +166,29 @@ void TileMap::createBox()
     this->addChild(_box);
 }
 
+void TileMap::createSkills()
+{
+    // Création de l'objet SkillsMenu
+    _skills = SkillsMenu::create();
+
+    // set position
+    _skills->setPosition(Vec2(-900, -480));
+
+    // ajout de EndPortal à la scène
+    this->addChild(_skills);
+}
+
 void TileMap::gameLoop()
 {
-    // Create the portals
+    // create the portals
     createStartPortal();
     createEndPortal();
 
-    // Create Obstacles
+    // create Obstacles
     createBox();
+
+    // create Skills
+    createSkills();
 
     // create a sequence with the actions and callbacks
     auto createLemmingsAction = CallFunc::create([this]() { this->createLemmings(); });

@@ -11,15 +11,15 @@ public:
 
 	void SkillsMenuInformation();
 
-	void updateTime(float);
-
 	void OnClick(Ref* pSender);
+
+	bool clickedSkill();
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(SkillsMenu);
 
 private:
-	bool isButtonPressed = false;
+	bool isButtonPressed;
 
 	Size _visibleSize;
 	Vec2 _origin;

@@ -1,7 +1,6 @@
 #include "cocos2d.h"
 
 #include "TileMap.h"
-#include "SkillsMenu.h"
 
 USING_NS_CC;
 
@@ -12,15 +11,9 @@ public:
 
     virtual bool init();
 
-    // skills menu
-    void createSkillsMenu();
-
     CREATE_FUNC(GameScene);
 
 private:
     // Instance de la classe TileMap
     TileMap* _tileMap;
-
-
-    SkillsMenu* _skillsMenu;
 };
