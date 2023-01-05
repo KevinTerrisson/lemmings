@@ -9,12 +9,16 @@ public:
 
     void loadLemmings();
 
-    //movements
+    // movements
     void drop();
     void advance();
     void backOff();
 
-    //effects
+    // output
+    void output();
+
+    // effects
+    void disappears();
     void explosion();
 
     // implement the "static create()" method manually

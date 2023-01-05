@@ -7,7 +7,8 @@ bool TileMap::init()
         return false;
     }
 
-    running = false;
+    // offset for UI
+    windowOffset = 120;
 
     // Charger la carte à tuiles
     loadTileMap();
@@ -39,7 +40,7 @@ void TileMap::loadTileMap()
     _obstacleCollisions->setVisible(true);
 
     // set to top position
-    _tileMap->setPosition(Vec2(0, 120));
+    _tileMap->setPosition(Vec2(0, windowOffset));
 
     // ajout de la carte à tuiles à la scène
     this->addChild(_tileMap);
@@ -62,11 +63,13 @@ void TileMap::createStartPortal()
     ValueMap spawn = objectGroup->getObject("Spawn");
 
     // Retrieve the x and y coordinates of "spawn"
-    int x = spawn["x"].asInt();
-    int y = spawn["y"].asInt();
+    xSpawn = spawn["x"].asInt();
+    xSpawn = xSpawn * 4;
+    ySpawn = spawn["y"].asInt();
+    ySpawn = ySpawn * 4;
 
     // Move the tile map by the necessary distance
-    _startPortal->setPosition(Vec2(x * 4, y * 4 + 120));
+    _startPortal->setPosition(Vec2(xSpawn, ySpawn + windowOffset));
 
     //ajout de StartPortal à la scène
     this->addChild(_startPortal);
@@ -84,11 +87,13 @@ void TileMap::createEndPortal()
     ValueMap arrival = objectGroup->getObject("Arrival");
 
     // Retrieve the x and y coordinates of "arrival"
-    int x = arrival["x"].asInt();
-    int y = arrival["y"].asInt();
+    xArrival = arrival["x"].asInt();
+    xArrival = xArrival * 4;
+    yArrival = arrival["y"].asInt();
+    yArrival = yArrival * 4;
 
     // Move the tile map by the necessary distance
-    _endPortal->setPosition(Vec2(x * 4, y * 4 + 120));
+    _endPortal->setPosition(Vec2(xArrival , yArrival + windowOffset));
 
     // ajout de EndPortal à la scène
     this->addChild(_endPortal);
@@ -106,14 +111,30 @@ void TileMap::createLemmings()
     ValueMap spawn = objectGroup->getObject("Spawn");
 
     // Retrieve the x and y coordinates of "spawn"
-    int x = spawn["x"].asInt();
-    int y = spawn["y"].asInt();
+    xLemmings = spawn["x"].asInt();
+    xLemmings = xLemmings * 4;
+    yLemmings = spawn["y"].asInt();
+    yLemmings = yLemmings * 4;
 
     // Move the tile map by the necessary distance
-    _lemmings->setPosition(Vec2(x * 4, y * 4 + 120));
+    _lemmings->setPosition(Vec2(xLemmings , yLemmings + windowOffset));
+
+    direction = true;
 
     // ajout de EndPortal à la scène
     this->addChild(_lemmings);
+}
+
+bool TileMap::exit()
+{
+    if (xLemmings >= xArrival)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 void TileMap::gameLoop()
@@ -146,10 +167,9 @@ void TileMap::gameLoop()
         createLemmingsAction,
         nullptr
     );
+
     // run it
     runAction(seq);
-
-    running = true;
 }
 
 bool TileMap::collideGround()
@@ -171,7 +191,6 @@ bool TileMap::collideWall()
     // deplacement horizontal
     Vec2 lemmingsPos = _lemmings->getPosition();
     lemmingsPos.x /= 64.0f;
-    //lemmingsPos.x = lemmingsPos.x + 0.2f;
     lemmingsPos.y /= 64.0f;
     bool tileGid = _wallCollisions->getTileGIDAt(lemmingsPos);
     if (tileGid) {
@@ -185,21 +204,27 @@ void TileMap::update(float delta)
 {
     if (_lemmings)
     {
+        // recuperation de la position du lemmings
+        xLemmings = _lemmings->getPosition().x;
+        yLemmings = _lemmings->getPosition().y;
+
         collideGround();
         collideWall();
+        exit();
 
-        if (!collideGround())
+        if (!collideGround() && !exit())
         {
             _lemmings->drop();
         }
-        else
+
+        if (collideGround() && !exit())
         {
-            if (running)
+            if (direction)
             {
                 _lemmings->advance();
                 if (collideWall())
                 {
-                    running = false;
+                    direction = false;
                 }
             }
             else
@@ -207,8 +232,21 @@ void TileMap::update(float delta)
                 _lemmings->backOff();
                 if (collideWall())
                 {
-                    running = true;
+                    direction = true;
                 }
+            }
+        }
+
+        if (exit())
+        {
+            if (yLemmings >= yArrival + windowOffset)
+            {
+                _lemmings->disappears();
+                _lemmings = nullptr;
+            }
+            else
+            {
+                _lemmings->output();
             }
         }
     }

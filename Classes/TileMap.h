@@ -3,6 +3,7 @@
 #include "StartPortal.h"
 #include "EndPortal.h"
 #include "Lemmings.h"
+#include "Obstacle.h"
 
 USING_NS_CC;
 
@@ -22,10 +23,12 @@ public:
 
     // lemmings
     void createLemmings();
+    bool exit();
 
     //collisions
     bool collideGround();
     bool collideWall();
+
     //void collideObstacle();
 
     // game
@@ -46,10 +49,22 @@ private:
 
     // lemmings
     Lemmings* _lemmings;
+    bool direction;
 
     //portals
     StartPortal* _startPortal;
     EndPortal* _endPortal;
 
-    bool running;
+    // coordonates
+    int xSpawn;
+    int ySpawn;
+
+    int xArrival;
+    int yArrival;
+
+    int xLemmings;
+    int yLemmings;
+
+    //window
+    int windowOffset;
 };
