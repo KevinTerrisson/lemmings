@@ -18,6 +18,9 @@ bool SkillsMenu::init()
 
     SkillsMenuInformation();
 
+    cocos2d::Scheduler* scheduler = cocos2d::Director::getInstance()->getScheduler();
+    scheduler->schedule(CC_CALLBACK_1(SkillsMenu::updateTime, this), this, 1.0f, -1, 0.0f, false, "updateTime");
+
     return true;
 }
 
@@ -33,6 +36,8 @@ void SkillsMenu::loadSkillsMenu()
 
 void SkillsMenu::SkillsMenuInformation()
 {
+    nbTime = 500;
+
     // temps restant
     auto out = Label::createWithTTF("out", "font/pixelArt.ttf", 50);
     out->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 500, _origin.y + _visibleSize.height / 2));
@@ -54,15 +59,21 @@ void SkillsMenu::SkillsMenuInformation()
     auto time = Label::createWithTTF("time", "font/pixelArt.ttf", 50);
     time->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 1050, _origin.y + _visibleSize.height / 2));
 
-    auto nbTime = Label::createWithTTF("500", "font/pixelArt.ttf", 50);
-    nbTime->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 1200, _origin.y + _visibleSize.height / 2));
+    auto nbTimeLabel = Label::createWithTTF(StringUtils::toString(nbTime), "font/pixelArt.ttf", 50);
+    nbTimeLabel->setPosition(Vec2(_origin.x + _visibleSize.width / 2 + 1200, _origin.y + _visibleSize.height / 2));
 
 
-    std::array<Label*, 7> labels = { out, nbLemmings, in, pourcentLemmingsIn, pourcent, time, nbTime };
+    std::array<Label*, 7> labels = { out, nbLemmings, in, pourcentLemmingsIn, pourcent, time, nbTimeLabel };
 
     for (auto label : labels) {
         this->addChild(label);
     }
+}
+
+void SkillsMenu::updateTime(float dt)
+{
+    nbTime--;
+    nbTimeLabel->setString(StringUtils::toString(time));
 }
 
 void SkillsMenu::OnClick(Ref* pSender)

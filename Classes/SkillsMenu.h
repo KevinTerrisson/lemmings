@@ -1,4 +1,5 @@
 #include "cocos2d.h"
+#include "CCScheduler.h"
 
 USING_NS_CC;
 
@@ -11,6 +12,8 @@ public:
 
 	void SkillsMenuInformation();
 
+	void updateTime(float);
+
 	void OnClick(Ref* pSender);
 
 	// implement the "static create()" method manually
@@ -21,4 +24,7 @@ private:
 
 	Size _visibleSize;
 	Vec2 _origin;
+
+	int nbTime;
+	Label* nbTimeLabel;
 };
