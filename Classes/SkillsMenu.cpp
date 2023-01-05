@@ -31,5 +31,22 @@ void SkillsMenu::loadSkillsMenu()
 
 void SkillsMenu::OnClick(Ref* pSender)
 {
-    //action
+    // Toggle the state of the button
+    isButtonPressed = !isButtonPressed;
+
+    auto button = dynamic_cast<MenuItemImage*>(pSender);
+    if (isButtonPressed)
+    {
+        // Change the image of the button to the "pressed" image
+        button->setNormalImage(Sprite::create("res/BombButton2.png"));
+        button->setSelectedImage(Sprite::create("res/BombButton2.png"));
+    }
+    else
+    {
+        // Change the image of the button back to the original image
+        button->setNormalImage(Sprite::create("res/BombButton.png"));
+        button->setSelectedImage(Sprite::create("res/BombButton2.png"));
+    }
+
+    // Perform the rest of the action
 }

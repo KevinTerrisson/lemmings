@@ -13,4 +13,7 @@ public:
 
 	// implement the "static create()" method manually
 	CREATE_FUNC(SkillsMenu);
+
+private:
+	bool isButtonPressed = false;
 };
