@@ -1,4 +1,5 @@
 #include "cocos2d.h"
+#include "ui/UIWidget.h"
 
 USING_NS_CC;
 
@@ -19,7 +20,9 @@ public:
 
     // effects
     void disappears();
-    void explosion();
+
+    // action
+    //bool isLemmingClicked(Sprite* sprite);
 
     // implement the "static create()" method manually
     CREATE_FUNC(Lemmings);

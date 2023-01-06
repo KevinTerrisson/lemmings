@@ -28,19 +28,5 @@ bool GameScene::init()
     // ajout de la carte à tuiles à la scène
     this->addChild(_tileMap);
 
-    createSkillsMenu();
-
     return true;
-}
-
-void GameScene::createSkillsMenu()
-{
-    // Création de l'objet SkillsMenu
-    _skillsMenu = SkillsMenu::create();
-
-    // Move the tile map by the necessary distance
-    _skillsMenu->setPosition(Vec2(-900, -480));
-
-    // ajout de EndPortal à la scène
-    this->addChild(_skillsMenu);
 }

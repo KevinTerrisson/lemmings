@@ -7,6 +7,10 @@ bool TileMap::init()
         return false;
     }
 
+    _keyboardListener = cocos2d::EventListenerKeyboard::create();
+    _keyboardListener->onKeyPressed = CC_CALLBACK_2(TileMap::skillActivate, this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(_keyboardListener, this);
+
     // offset for UI
     windowOffset = 120;
 
@@ -36,9 +40,9 @@ void TileMap::loadTileMap()
     _boxCollisions = _tileMap->getLayer("Obstacle");
 
     // hide collisions layers
-    _groundCollisions->setVisible(true);
-    _wallCollisions->setVisible(true);
-    _boxCollisions->setVisible(true);
+    _groundCollisions->setVisible(false);
+    _wallCollisions->setVisible(false);
+    _boxCollisions->setVisible(false);
 
     // set to top position
     _tileMap->setPosition(Vec2(0, windowOffset));
@@ -166,14 +170,31 @@ void TileMap::createBox()
     this->addChild(_box);
 }
 
+void TileMap::createSkills()
+{
+    // Création de l'objet SkillsMenu
+    _skills = SkillsMenu::create();
+
+    // set position
+    _skills->setPosition(Vec2(-900, -480));
+
+    // ajout de EndPortal à la scène
+    this->addChild(_skills);
+}
+
 void TileMap::gameLoop()
 {
-    // Create the portals
+    isVisible = true;
+
+    // create the portals
     createStartPortal();
     createEndPortal();
 
-    // Create Obstacles
+    // create Obstacles
     createBox();
+
+    // create Skills
+    createSkills();
 
     // create a sequence with the actions and callbacks
     auto createLemmingsAction = CallFunc::create([this]() { this->createLemmings(); });
@@ -273,7 +294,11 @@ void TileMap::update(float delta)
             {
                 // avance
                 _lemmings->advance();
-                if (collideWall() || collideBox())
+                if (collideWall())
+                {
+                    direction = false;
+                }
+                if (collideBox() && isVisible)
                 {
                     direction = false;
                 }
@@ -282,7 +307,11 @@ void TileMap::update(float delta)
             {
                 // recule
                 _lemmings->backOff();
-                if (collideWall() || collideBox())
+                if (collideWall())
+                {
+                    direction = true;
+                }
+                if (collideBox() && isVisible)
                 {
                     direction = true;
                 }
@@ -296,11 +325,25 @@ void TileMap::update(float delta)
             {
                 _lemmings->disappears();
                 _lemmings = nullptr;
+
+                if (true) // si tout les lemmings sont passés
+                {
+                    Director::getInstance()->replaceScene(WinScene::createScene());
+                }
             }
             else
             {
                 _lemmings->output();
             }
         }
+    }
+}
+
+void TileMap::skillActivate(EventKeyboard::KeyCode keyCode, Event* event)
+{
+    if (keyCode == EventKeyboard::KeyCode::KEY_UP_ARROW)
+    {
+        _box->boxDestruction();
+        isVisible = false;
     }
 }

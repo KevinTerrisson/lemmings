@@ -18,9 +18,9 @@ bool Lemmings::init()
 
 void Lemmings::loadLemmings()
 {
-    auto mySprite = Sprite::create("Assets/sprite.png");
+    auto lemmings = Sprite::create("Assets/sprite.png");
 
-    this->addChild(mySprite);
+    this->addChild(lemmings);
 }
 
 void Lemmings::drop()
@@ -75,9 +75,3 @@ void Lemmings::disappears()
 {
     this->removeFromParent();
 }
-
-void Lemmings::explosion()
-{
-    //  explosion
-}
-

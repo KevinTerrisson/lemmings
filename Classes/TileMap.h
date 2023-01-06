@@ -4,6 +4,8 @@
 #include "EndPortal.h"
 #include "Lemmings.h"
 #include "Box.h"
+#include "WinScene.h"
+#include "SkillsMenu.h"
 
 USING_NS_CC;
 
@@ -25,6 +27,10 @@ public:
     void createLemmings();
     bool exit();
 
+    // Skills
+    void createSkills();
+    void skillActivate(EventKeyboard::KeyCode keyCode, Event* event);
+
     // Obstacle
     void createBox();
 
@@ -41,12 +47,16 @@ public:
     CREATE_FUNC(TileMap);
 
 private:
+    // ecouteur de touches
+    EventListenerKeyboard* _keyboardListener;
+
     // Map
     TMXTiledMap* _tileMap;
 
     // Layers
     TMXLayer* _groundCollisions;
     TMXLayer* _wallCollisions;
+    bool isVisible;
     TMXLayer* _boxCollisions;
    
     // Lemmings
@@ -60,6 +70,9 @@ private:
     // Obstacle
     Box* _box;
     bool destroy;
+
+    // Skills
+    SkillsMenu* _skills;
 
     // Coordonates
     int xSpawn;

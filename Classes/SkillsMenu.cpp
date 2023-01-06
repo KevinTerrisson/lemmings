@@ -1,6 +1,5 @@
 #include "SkillsMenu.h"
 
-
 USING_NS_CC;
 
 // on "init" you need to initialize your instance
@@ -21,7 +20,6 @@ bool SkillsMenu::init()
 
     SkillsMenuInformation();
 
-
     return true;
 }
 
@@ -31,6 +29,8 @@ void SkillsMenu::loadSkillsMenu()
     //auto Back = Sprite::create("res/SkillsMenuBackground");
 
     auto menu = Menu::create(Bomb, /*Back, */ nullptr);
+
+    isButtonPressed = false;
   
     this->addChild(menu);
 }
@@ -76,13 +76,27 @@ void SkillsMenu::OnClick(Ref* pSender)
         // changement de l'image du bouton pour la version "pressed"
         button->setNormalImage(Sprite::create("res/BombButton2.png"));
         button->setSelectedImage(Sprite::create("res/BombButton2.png"));
+
+        /*return true;*/
     }
     else
     {
         // changement de l'image du bouton pour la version originale
         button->setNormalImage(Sprite::create("res/BombButton.png"));
         button->setSelectedImage(Sprite::create("res/BombButton2.png"));
-    }
 
-    // suite des action
+        /*return false;*/
+    }
+}
+
+bool SkillsMenu::clickedSkill()
+{
+    if (isButtonPressed)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
