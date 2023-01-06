@@ -1,5 +1,6 @@
 #include "cocos2d.h"
 #include "AudioEngine.h"
+#include "ui/UIButton.h"
 
 USING_NS_CC;
 
@@ -32,5 +33,4 @@ private:
     Vec2 _lemmings;
     Vec2 _save;
     Vec2 _kill;
-
 };

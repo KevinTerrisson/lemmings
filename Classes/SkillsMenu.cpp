@@ -76,12 +76,16 @@ void SkillsMenu::OnClick(Ref* pSender)
         // changement de l'image du bouton pour la version "pressed"
         button->setNormalImage(Sprite::create("res/BombButton2.png"));
         button->setSelectedImage(Sprite::create("res/BombButton2.png"));
+
+        /*return true;*/
     }
     else
     {
         // changement de l'image du bouton pour la version originale
         button->setNormalImage(Sprite::create("res/BombButton.png"));
         button->setSelectedImage(Sprite::create("res/BombButton2.png"));
+
+        /*return false;*/
     }
 }
 

@@ -29,6 +29,7 @@ public:
 
     // Skills
     void createSkills();
+    void skillActivate(EventKeyboard::KeyCode keyCode, Event* event);
 
     // Obstacle
     void createBox();
@@ -46,12 +47,16 @@ public:
     CREATE_FUNC(TileMap);
 
 private:
+    // ecouteur de touches
+    EventListenerKeyboard* _keyboardListener;
+
     // Map
     TMXTiledMap* _tileMap;
 
     // Layers
     TMXLayer* _groundCollisions;
     TMXLayer* _wallCollisions;
+    bool isVisible;
     TMXLayer* _boxCollisions;
    
     // Lemmings
