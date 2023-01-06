@@ -35,7 +35,6 @@ bool WinScene::init()
 
     getContext();
 
-    playMusic();
     displayBackground();
     displayText();
 
@@ -75,12 +74,6 @@ void WinScene::displayText()
     auto save = Label::createWithTTF("Save :", "font/pixelArt.ttf", 50);
     save->setPosition(_save);
     this->addChild(save);
-}
-
-void WinScene::playMusic()
-{
-    // Music Menu Theme
-    auto music = AudioEngine::play2d("music/Menu.mp3", true, 0.3f);
 }
 
 void WinScene::displayBackground()
