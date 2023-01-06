@@ -15,7 +15,6 @@ public:
 
     void displayText();
     void displayBackground();
-    void playMusic();
 
     // implement the "static create()" method manually
     CREATE_FUNC(WinScene);
